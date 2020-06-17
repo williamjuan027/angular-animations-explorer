@@ -5,8 +5,15 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'post/:postName',
+    loadChildren: () =>
+      import('./features/post/post.module').then((m) => m.PostModule),
+  },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
