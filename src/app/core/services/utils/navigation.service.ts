@@ -12,6 +12,6 @@ export class NavigationService {
   }
 
   navigateToPost(postName: string): void {
-    this.router.navigate(['/post']);
+    this.router.navigate([`/post/${postName}`]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from '@core/services';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {}
+
+  navigateToPost(): void {
+    this.navigationService.navigateToPost('state-change');
+  }
 }

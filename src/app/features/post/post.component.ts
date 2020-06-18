@@ -1,12 +1,8 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ComponentFactoryResolver,
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DemoContentDirective } from './directives/demo-content.directive';
-import { ContentRouteConfig } from './content/content-route.config';
+import { ContentLoaderService } from './content/content-loader.service';
+import { NavigationService } from '@core/services';
 
 @Component({
   selector: 'app-post',
@@ -17,33 +13,31 @@ export class PostComponent implements OnInit {
   @ViewChild(DemoContentDirective, { static: true })
   demoContent: DemoContentDirective;
 
-  mdPost;
+  mdPost: string; // path to md file
 
   constructor(
     private route: ActivatedRoute,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private navigaitonService: NavigationService,
+    private contentLoaderService: ContentLoaderService
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.loadDemoContent(params.get('postName'));
-      console.log('params', params.get('postName'));
     });
   }
 
   private loadDemoContent(postName: string) {
-    if (!ContentRouteConfig.hasOwnProperty(postName)) {
-      // redirect to home
-      return;
-    }
-    const currentPost = ContentRouteConfig[postName];
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      currentPost.demo
-    );
-    this.mdPost = currentPost.post;
-    const viewContainerRef = this.demoContent.viewContainerRef;
-    viewContainerRef.clear();
+    // load markdown
+    this.mdPost = this.contentLoaderService.loadPostMD(postName);
 
-    const componentRef = viewContainerRef.createComponent(componentFactory);
+    // load demo component
+    this.contentLoaderService
+      .load(postName, this.demoContent.viewContainerRef)
+      .catch((e) => {
+        console.log('e', e);
+        // return to home
+        this.navigaitonService.navigateToHome();
+      });
   }
 }

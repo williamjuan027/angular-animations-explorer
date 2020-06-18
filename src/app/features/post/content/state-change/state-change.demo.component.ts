@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./state-change.demo.component.scss'],
 })
 export class StateChangeDemoComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    console.log('state-change component constructor');
+  }
 
   ngOnInit(): void {}
 }
