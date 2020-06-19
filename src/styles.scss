@@ -39,3 +39,15 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+// Markdown related styling
+markdown {
+  display: block;
+  pre {
+    background-color: aliceblue;
+    padding: 1rem;
+  }
+  code {
+    white-space: pre-wrap;
+  }
+}

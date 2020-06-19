@@ -1,8 +1,12 @@
 <app-two-column>
   <div left-section>
-    <markdown [src]="mdPost"> </markdown>
+    <div class="markdown-container">
+      <markdown [src]="mdPost"> </markdown>
+    </div>
   </div>
   <div right-section>
-    <ng-template appDemoContent></ng-template>
+    <div class="demo-container">
+      <ng-template appDemoContent></ng-template>
+    </div>
   </div>
 </app-two-column>
