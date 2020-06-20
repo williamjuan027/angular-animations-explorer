@@ -10,9 +10,9 @@ import { PostRoutingModule } from './post-routing.module';
 import { ContainerModule } from '@shared/components/container';
 import { DemoContentDirective } from './directives/demo-content.directive';
 import { TwoColumnModule } from '@shared/components/layout';
-import { ContentLoaderService } from './content/content-loader.service';
-import { CONTENT_WIDGETS } from './content/content-tokens';
-import { widgetArrayToObj } from './content/content-widgets';
+import { ContentLoaderService } from '@content/content-loader.service';
+import { CONTENT_WIDGETS } from '@content/content-tokens';
+import { widgetArrayToObj } from '@content/content-widgets';
 
 @NgModule({
   declarations: [PostComponent, DemoContentDirective],

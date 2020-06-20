@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DemoContentDirective } from './directives/demo-content.directive';
-import { ContentLoaderService } from './content/content-loader.service';
+import { ContentLoaderService } from '@content/content-loader.service';
 import { NavigationService } from '@core/services';
 
 @Component({

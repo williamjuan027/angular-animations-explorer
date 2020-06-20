@@ -13,6 +13,7 @@
     "target": "es2015",
     "lib": ["es2018", "dom"],
     "paths": {
+      "@content/*": ["src/app/content/*"],
       "@core/*": ["src/app/core/*"],
       "@shared/*": ["src/app/shared/*"]
     }

@@ -8,7 +8,7 @@ export const contentRoutes: {
   {
     path: 'state-change',
     loadChildren: () =>
-      import('./state-change/state-change.demo.module').then(
+      import('@content/state-change/state-change.demo.module').then(
         (m) => m.StateChangeDemoModule
       ),
     post: 'assets/post-content/state-change/state-change.content.md',
