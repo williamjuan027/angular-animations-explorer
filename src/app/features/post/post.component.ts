@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DemoContentDirective } from './directives/demo-content.directive';
 import { ContentLoaderService } from '@content/content-loader.service';
 import { NavigationService } from '@core/services';
+import { contentRoutes } from '@content/content-routes';
 
 @Component({
   selector: 'app-post',
@@ -14,6 +15,7 @@ export class PostComponent implements OnInit {
   demoContent: DemoContentDirective;
 
   mdPost: string; // path to md file
+  postInfo;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,9 +30,9 @@ export class PostComponent implements OnInit {
   }
 
   private loadDemoContent(postName: string) {
+    this.postInfo = contentRoutes.find((post) => post.path === postName);
     // load markdown
     this.mdPost = this.contentLoaderService.loadPostMD(postName);
-
     // load demo component
     this.contentLoaderService
       .load(postName, this.demoContent.viewContainerRef)

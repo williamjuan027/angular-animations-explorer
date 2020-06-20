@@ -1,3 +1,10 @@
-<p>home works!</p>
-
-<app-card-quicklink (click)="navigateToPost()"></app-card-quicklink>
+<div fxLayout="row wrap">
+  <ng-container *ngFor="let post of posts">
+    <div fxFlex class="card-container">
+      <app-card-quicklink
+        [config]="post"
+        (click)="navigateToPost(post.path)"
+      ></app-card-quicklink>
+    </div>
+  </ng-container>
+</div>

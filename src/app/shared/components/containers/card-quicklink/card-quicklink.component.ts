@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CardQuicklinkConfig } from './card-quicklink.config';
 
 @Component({
   selector: 'app-card-quicklink',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-quicklink.component.scss'],
 })
 export class CardQuicklinkComponent {
-  constructor() {}
+  @Input() config: CardQuicklinkConfig;
 }

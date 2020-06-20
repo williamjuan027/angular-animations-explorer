@@ -10,4 +10,4 @@ const COMPONENTS = [ToolbarComponent];
   imports: [CommonModule, MatToolbarModule],
   exports: [...COMPONENTS],
 })
-export class NavigationModule {}
+export class NavigationsModule {}

@@ -5,7 +5,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationModule } from '@shared/components/navigation';
+import { NavigationsModule } from '@shared/components/navigations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NavigationModule,
+    NavigationsModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
   ],
   providers: [],

@@ -1,5 +1,3 @@
-# State Change Content
-
 First we will need to define the different states and the animation for how the different states are going to transition to each other. We can do it by using the `animations` array in the component's decorator.
 
 ```typescript

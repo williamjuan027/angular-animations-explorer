@@ -11,4 +11,4 @@ const COMPONENTS = [CardComponent, CardQuicklinkComponent];
   imports: [CommonModule, MatCardModule],
   exports: [...COMPONENTS],
 })
-export class ContainerModule {}
+export class ContainersModule {}
