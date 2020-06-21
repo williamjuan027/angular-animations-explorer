@@ -18,9 +18,17 @@ import { trigger, style, animate, transition } from '@angular/animations';
   ],
 })
 export class SequenceDemoComponent {
-  cardIsDisplayed = true;
+  list: { name: string; isFavorite: boolean }[] = [
+    { name: 'First', isFavorite: false },
+    { name: 'Second', isFavorite: false },
+    { name: 'Third', isFavorite: false },
+    { name: 'Fourth', isFavorite: false },
+    { name: 'Fifth', isFavorite: false },
+  ];
 
-  toggleCard(): void {
-    this.cardIsDisplayed = !this.cardIsDisplayed;
+  listIsDisplayed = true;
+
+  stagger(): void {
+    this.listIsDisplayed = false;
   }
 }

@@ -1,4 +1,8 @@
-<div class="app-container">
-  <app-toolbar></app-toolbar>
-  <router-outlet></router-outlet>
-</div>
+<app-toolbar (menuClick)="onMenuClick()"></app-toolbar>
+<app-sidenav #sidenav>
+  <div main-content>
+    <div class="app-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</app-sidenav>

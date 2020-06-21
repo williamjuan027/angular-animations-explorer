@@ -1,10 +1,17 @@
-<div fxLayout="row wrap">
-  <ng-container *ngFor="let post of posts">
-    <div fxFlex class="card-container">
-      <app-card-quicklink
-        [config]="post"
-        (click)="navigateToPost(post.path)"
-      ></app-card-quicklink>
-    </div>
-  </ng-container>
+<div class="home-container">
+  <div fxLayout="row wrap">
+    <ng-container *ngFor="let post of posts">
+      <div
+        fxFlex.lt-sm="100"
+        fxFlex.lt-md="50"
+        fxFlex="33%"
+        class="card-container"
+      >
+        <app-card-quicklink
+          [config]="post"
+          (click)="navigateToPost(post.path)"
+        ></app-card-quicklink>
+      </div>
+    </ng-container>
+  </div>
 </div>

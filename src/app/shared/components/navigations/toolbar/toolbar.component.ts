@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { NavigationService } from '@core/services';
 
 @Component({
@@ -7,8 +7,13 @@ import { NavigationService } from '@core/services';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
+  @Output() menuClick = new EventEmitter<void>();
   constructor(private navigationService: NavigationService) {}
   navigateToHome(): void {
     this.navigationService.navigateToHome();
+  }
+
+  toggleMenu(): void {
+    this.menuClick.emit();
   }
 }
