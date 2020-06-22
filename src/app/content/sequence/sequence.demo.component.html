@@ -1,19 +1,75 @@
 <div>
-  <ng-container *ngFor="let item of list; let i = index">
+  <app-button-basic
+    (click)="selectSequence('SEQUENCE')"
+    text="sequence"
+  ></app-button-basic>
+  <app-button-basic
+    (click)="selectSequence('GROUP')"
+    text="group"
+  ></app-button-basic>
+  <app-button-basic
+    (click)="selectSequence('STAGGER')"
+    text="stagger"
+  ></app-button-basic>
+  <ng-container [ngSwitch]="sequenceSelected">
+    <div
+      *ngSwitchCase="'SEQUENCE'"
+      @fadeGrowSequence
+      (@fadeGrowSequence.done)="animationDone()"
+    >
+      <ng-container *ngTemplateOutlet="card"></ng-container>
+    </div>
+    <div
+      *ngSwitchCase="'GROUP'"
+      @fadeGrowGroup
+      (@fadeGrowGroup.done)="animationDone()"
+    >
+      <ng-container *ngTemplateOutlet="card"></ng-container>
+    </div>
+    <div
+      *ngSwitchCase="'STAGGER'"
+      @fadeGrowStagger
+      (@fadeGrowStagger.done)="animationDone()"
+    >
+      <ng-container *ngTemplateOutlet="cards"></ng-container>
+    </div>
+    <div *ngSwitchDefault></div>
+  </ng-container>
+</div>
+
+<!-- TODO: refactor this so no repeated code -->
+<ng-template #card>
+  <div>
     <app-card>
       <div
         fxLayout="row"
         fxLayoutAlign="space-between center"
         class="card-container"
       >
-        <span>{{ item.name }}</span>
-        <span
-          [@favoriteStateChange]="item.isFavorite ? 'favorite' : 'default'"
-          class="material-icons"
-        >
+        <span>First</span>
+        <span class="material-icons">
           thumb_up_alt
         </span>
       </div>
     </app-card>
+  </div>
+</ng-template>
+
+<ng-template #cards>
+  <ng-container *ngFor="let item of list; let i = index">
+    <div class="card">
+      <app-card>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-between center"
+          class="card-container"
+        >
+          <span>{{ item.name }}</span>
+          <span class="material-icons">
+            thumb_up_alt
+          </span>
+        </div>
+      </app-card>
+    </div>
   </ng-container>
-</div>
+</ng-template>

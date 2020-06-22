@@ -1,11 +1,11 @@
 Animations can be run both in sequence and in parallel using the functions `sequence()` and `group()` respectively. A combination of parallel and sequence can also be used where the animation runs with a cascading delay between the elements. This effect is achieved using `stagger()`.
 
-In order to use these sequences, we will need the `query()` function to find the inner elements of the element being animated. The way `query` works is that it will apply the animations that we define to each individual element within the parent element which we target, instead of applying it to the parent.
+`group` and `sequence` are a little different compared to `stagger`. The former are applied to animation steps (values inside the animation array), whereas the latter are applied to the animated elements.
 
-To demonstrate the various animation sequences, let’s start with defining the template which contains the parent element that we will target in our animations along with a few children elements. This is commonly used in lists or grid-like components containing multiple same or similar children elements. For simplicity, we will animate the children elements entering the view, adding a fade in effect using the 3 sequences.
+To demonstrate the various animation sequences, let’s start with defining the template which contains the parent element that we will target in our animations along with a few children elements. This is commonly used in lists or grid-like components containing multiple same or similar children elements. For simplicity, we will animate the children elements entering the view, adding a fade in and grow effect using the 3 sequences.
 
 ```html
-<ul @fadeIn>
+<ul @fadeInGrow>
   <li>First Element</li>
   <li>Second Element</li>
   <li>Third Element</li>
@@ -13,20 +13,17 @@ To demonstrate the various animation sequences, let’s start with defining the 
 ```
 
 Run Animations in Parallel
-
-The main difference between the previous animations discussed in this earlier in this post is that we have the additional `query` function which looks for `:enter` inside our `transition(‘:enter’)` function. Let’s break down how this new function works with the `trigger` and `transition`:
-The trigger `fadeIn` targets the parent adding an `:enter` transition which will execute the animation in the transition array when the parent element enters the DOM
-`query(‘:enter’)` inside the transition array targets all the children elements which will enter the DOM and applies the properties in the array that gets passed in which defines the elements’ styles and animations
-`group(...)` in the array being passed in to the `query` function tells Angular to execute all the animations applied to the children elements in parallel
+`group` lets you run multiple animation steps in parallel. An example of a use case for this is if you want to animate multiple properties with varying animation properties such as different duration, delay or eases.
 
 ```typescript
 animations: [
-  trigger(‘fadeIn’, [
+  trigger(‘fadeInGrow, [
     transition(‘:enter’, [
       query(‘:enter’, [
-        style({ opacity: 0 }),
+        style({ opacity: 0, transform: ‘scale(0.8)’  }),
         group([
-          animate(‘500ms’, style({ opacity: 1 })
+          animate(‘500ms’, style({ opacity: 1 }),
+          animate(‘200ms ease-in’, style({ transform: ‘scale(1)’ })
         ])
       ])
     ])
@@ -35,16 +32,19 @@ animations: [
 ```
 
 Run Animations in Sequence
-Comparing the code below and the code in the previous section, everything looks identical, except the `group` function, which is replaced with the `sequence` function. It works the exact same way as running in parallel, the difference being `sequence` will tell Angular to execute the animation one after the other.
+`sequence` works similar to `group` where it alters the animation steps execution. `sequence` runs the animation sequentially, executing animations in the animation array one after the other. This function simplifies the process of chaining animations for a single target element.
+
+Comparing the code below and the code in the previous section, everything looks identical, except the `group` function, which is replaced with the `sequence` function. It works the exact same way as running in parallel, the difference being `sequence` will tell Angular to execute the animation one after the other. So instead of fading in and growing the element at the same time, the `transform` animation will be executed once the `opacity` animation is done.
 
 ```typescript
 animations: [
-  trigger(‘fadeIn’, [
+  trigger(‘fadeInGrow’, [
     transition(‘:enter’, [
       query(‘:enter’, [
-        style({ opacity: 0 }),
+        style({ opacity: 0, transform: ‘scale(0.8)’  }),
         sequence([
-          animate(‘500ms’, style({ opacity: 1 })
+          animate(‘500ms’, style({ opacity: 1 }),
+          animate(‘200ms ease-in’, style({ transform: ‘scale(1)’ })
         ])
       ])
     ])
@@ -53,15 +53,19 @@ animations: [
 ```
 
 Stagger Animations
-Similar to the previous section, all that needs to be modified in the previous code is the `sequence` function. `stagger` however, takes in an additional parameter that defines the delay that the animation needs to apply between each element. This is the first parameter that the function accepts followed by the actual animate function.
+Unlike the previous 2 functions, `stagger` is applied to the animated elements. This is usually used in conjunction with the `query` function to find inner elements within a parent/container element and applying animation to each of the child individually. What makes `stagger` unique is that it takes in an additional parameter to specify the delay for the animation’s execution for each element creating a cascading effect.
+
+With `stagger`, the animation will be applied in the order of the element queried. This usually results in a staggering effect from the top down. We can easily reverse this order by passing in a negative value to the `timing` parameter resulting in the animation staggered starting from the last element and making its way up.
+
+The second parameter in the stagger function accepts an array of `style` and `animate` functions, which means that we could also use the previous sequences - `sequence` and `group` to time the individual step of the animation together with `stagger` controlling the timing of the individual elements.
 
 ```typescript
 animations: [
-  trigger(‘fadeIn’, [
+  trigger(fadeInGrow, [
     transition(‘:enter’, [
       query(‘:enter’, [
         style({ opacity: 0 }),
-        stagger(50, [
+        stagger(‘50ms’, [
           animate(‘500ms’, style({ opacity: 1 })
         ])
       ])
@@ -70,31 +74,7 @@ animations: [
 ]
 ```
 
-Multi-step Animation using Angular Keyframes
-Similar to how CSS keyframes animations work, keyframes allow us to build an animation in multiple steps. In other words, it lets us sequence our style changes for each element. Since this method can be passed in to the `animate` function, it can be combined with the previous section’s animation sequences - `group`, `sequence`, and `stagger`, giving us even more control over the sequencing of our animations.
-
-[Angular’s keyframe function](https://angular.io/api/animations/keyframes) comes with an `offset` property which accepts decimals ranging from 0 to 1 to specify the steps of our animation. These are identical to the CSS keyframe counterparts of using percentages or `to` and `from` properties that we normally use to specify our animation steps. Below is an example of a simple CSS keyframe animation, and what it looks like when using Angular’s keyframe function.
-
-```css
-@keyframes moveUp {
-  0% {
-    transform: ‘translateY(100%) ’;
-  }
-  50% {
-    transform: ‘translateY(75%) ’;
-  }
-  1-0% {
-    transform: ‘translateY(0) ’;
-  }
-}
-```
-
-```ts
-query(‘:enter’, [
-  animate(‘200ms’, keyframes([
-    style({ transform: ‘translateY(100%)’, offset: 0 }),
-    style({ transform: ‘translateY(75%)’, offset: 0.5 }),
-    style({ transform:  ‘translateY(0)’, offset: 1 }),
-  ])
-])
-```
+Let’s break down the new functions in the code above
+The trigger `fadeInGrow` targets the parent adding an `:enter` transition which will execute the animation in the transition array when the parent element enters the DOM
+`query(‘:enter’)` inside the transition array targets all the children elements which will enter the DOM and applies the properties in the array that gets passed in which defines the elements’ styles and animations
+`stagger(‘50ms’)` in the array being passed in to the `query` function tells Angular to execute all the animations applied to the children elements with a 50 ms delay between each element.

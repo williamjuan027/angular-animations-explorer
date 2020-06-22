@@ -10,9 +10,9 @@ mat-sidenav-container {
         cursor: pointer;
         padding: 0.5rem 1rem;
 
-        // TODO: not working damn it
-        li:hover {
-          opacity: 0;
+        &:hover {
+          opacity: 0.7;
+          background-color: #f8f8f8;
         }
       }
     }
