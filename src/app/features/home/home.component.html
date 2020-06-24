@@ -1,17 +1,20 @@
 <div class="home-container">
-  <div fxLayout="row wrap">
-    <ng-container *ngFor="let post of posts">
-      <div
-        fxFlex.lt-sm="100"
-        fxFlex.lt-md="50"
-        fxFlex="33%"
-        class="card-container"
-      >
-        <app-card-quicklink
-          [config]="post"
-          (click)="navigateToPost(post.path)"
-        ></app-card-quicklink>
-      </div>
-    </ng-container>
-  </div>
+  <ng-container *ngFor="let category of contents">
+    <h2>{{ category.name }}</h2>
+    <div fxLayout="row wrap">
+      <ng-container *ngFor="let post of category.routes">
+        <div
+          fxFlex.lt-sm="100"
+          fxFlex.lt-md="50"
+          fxFlex="33%"
+          class="card-container"
+        >
+          <app-card-quicklink
+            [config]="post"
+            (click)="navigateToPost(category.path, post.path)"
+          ></app-card-quicklink>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
 </div>

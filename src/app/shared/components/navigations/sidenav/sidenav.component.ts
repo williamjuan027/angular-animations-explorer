@@ -30,7 +30,7 @@ export class SidenavComponent {
     this.sidenav.toggle();
   }
 
-  navigateToPost(path: string): void {
-    this.navigationService.navigateToPost(path);
+  navigateToPost(category: string, post: string): void {
+    this.navigationService.navigateToPost(category, post);
   }
 }

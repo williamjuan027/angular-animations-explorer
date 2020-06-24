@@ -16,7 +16,7 @@ export class AppComponent {
     this.sidenav.toggle();
   }
 
-  navigateToPost(path: string): void {
-    this.navigationService.navigateToPost(path);
-  }
+  // navigateToPost(path: string): void {
+  //   this.navigationService.navigateToPost(path);
+  // }
 }

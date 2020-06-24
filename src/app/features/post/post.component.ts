@@ -25,21 +25,26 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.loadDemoContent(params.get('postName'));
+      this.loadDemoContent(params.get('category'), params.get('postName'));
     });
   }
 
-  private loadDemoContent(postName: string) {
-    this.postInfo = contentRoutes.find((post) => post.path === postName);
-    // load markdown
-    this.mdPost = this.contentLoaderService.loadPostMD(postName);
-    // load demo component
-    this.contentLoaderService
-      .load(postName, this.demoContent.viewContainerRef)
-      .catch((e) => {
-        console.log('e', e);
-        // return to home
-        this.navigaitonService.navigateToHome();
-      });
+  private loadDemoContent(category: string, postName: string) {
+    try {
+      this.postInfo = this.contentLoaderService.getPostInfo(category, postName);
+
+      // load markdown
+      this.mdPost = this.postInfo.post;
+
+      // load demo component
+      this.contentLoaderService.load(
+        category,
+        postName,
+        this.demoContent.viewContainerRef
+      );
+    } catch (e) {
+      this.navigaitonService.navigateToHome();
+      return;
+    }
   }
 }

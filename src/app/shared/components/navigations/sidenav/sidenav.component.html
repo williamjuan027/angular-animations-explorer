@@ -2,8 +2,17 @@
   <mat-sidenav #sidenav mode="side">
     <ng-container *ngIf="sidenavList">
       <ul>
-        <li *ngFor="let nav of sidenavList" (click)="navigateToPost(nav.path)">
-          {{ nav.title }}
+        <li *ngFor="let category of sidenavList">
+          <ul>
+            <li class="category">{{ category.name }}</li>
+            <li
+              class="post"
+              *ngFor="let nav of category.routes"
+              (click)="navigateToPost(category.path, nav.path)"
+            >
+              {{ nav.title }}
+            </li>
+          </ul>
         </li>
       </ul>
     </ng-container>

@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { CONTENT_WIDGETS } from './content-tokens';
 import { contentRoutes } from './content-routes';
+import { IContentCategoryRoutes } from './content-routes.interface';
 @Injectable({
   providedIn: 'root',
 })
@@ -22,30 +23,39 @@ export class ContentLoaderService {
     }
   ) {}
 
-  loadPostMD(name: string): string {
-    const route = contentRoutes.find((routes) => routes.path === name);
-    return route && route.post;
+  getPostInfo(category: string, post: string): IContentCategoryRoutes {
+    try {
+      const route = contentRoutes
+        .find((contentCategory) => contentCategory.path === category)
+        .routes.find((categoryPost) => categoryPost.path === post);
+      return route;
+    } catch (e) {
+      throw e;
+    }
   }
 
-  async load(name: string, container: ViewContainerRef) {
-    container.clear();
-    const tempModule = await this.contentWidget[name]();
-    let moduleFactory;
+  async load(category: string, post: string, container: ViewContainerRef) {
+    try {
+      container.clear();
+      const tempModule = await this.contentWidget[`${category}/${post}`]();
+      let moduleFactory;
 
-    if (tempModule instanceof NgModuleFactory) {
-      // For AOT
-      moduleFactory = tempModule;
-    } else {
-      // For JIT
-      moduleFactory = await this.compiler.compileModuleAsync(tempModule);
+      if (tempModule instanceof NgModuleFactory) {
+        // For AOT
+        moduleFactory = tempModule;
+      } else {
+        // For JIT
+        moduleFactory = await this.compiler.compileModuleAsync(tempModule);
+      }
+      const entryComponent = (moduleFactory.moduleType as any).entry;
+      const moduleRef = moduleFactory.create(this.injector);
+
+      const compFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(
+        entryComponent
+      );
+      container.createComponent(compFactory);
+    } catch (e) {
+      throw e;
     }
-    const entryComponent = (moduleFactory.moduleType as any).entry;
-    const moduleRef = moduleFactory.create(this.injector);
-
-    const compFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(
-      entryComponent
-    );
-
-    container.createComponent(compFactory);
   }
 }

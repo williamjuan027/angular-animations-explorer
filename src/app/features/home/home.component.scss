@@ -1,5 +1,9 @@
 .home-container {
   padding: 1.5rem;
+  h2 {
+    margin: 0;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
   .card-container {
     padding: 0.5rem;
     app-card-quicklink {

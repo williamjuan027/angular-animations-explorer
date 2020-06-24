@@ -9,10 +9,10 @@ import { contentRoutes } from '@content/content-routes';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  posts: CardQuicklinkConfig[] = contentRoutes;
+  contents = contentRoutes;
   constructor(private navigationService: NavigationService) {}
 
-  navigateToPost(path: string): void {
-    this.navigationService.navigateToPost(path);
+  navigateToPost(category: string, post: string): void {
+    this.navigationService.navigateToPost(category, post);
   }
 }

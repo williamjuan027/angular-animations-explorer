@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./features/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'post/:postName',
+    path: 'post/:category/:postName',
     loadChildren: () =>
       import('./features/post/post.module').then((m) => m.PostModule),
   },
