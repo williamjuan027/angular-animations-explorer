@@ -57,4 +57,18 @@ export const contentRoutes: IContentRoutes[] = [
     post: 'assets/post-content/sequence/sequence.content.md',
     categories: 'advanced',
   },
+  {
+    title: 'Multi-step Animation using Angular Keyframes',
+    description: '',
+    image:
+      'https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9',
+    tags: ['advanced', 'angular animations'],
+    path: 'sequence-keyframe',
+    loadChildren: () =>
+      import('@content/sequence-keyframe/sequence-keyframe.demo.module').then(
+        (m) => m.SequenceKeyframeDemoModule
+      ),
+    post: 'assets/post-content/sequence-keyframe/sequence-keyframe.content.md',
+    categories: 'advanced',
+  },
 ];
