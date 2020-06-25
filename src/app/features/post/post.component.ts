@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DemoContentDirective } from './directives/demo-content.directive';
 import { ContentLoaderService } from '@content/content-loader.service';
 import { NavigationService } from '@core/services';
-import { contentRoutes } from '@content/content-routes';
+import {
+  EPageType,
+  IContentCategoryRoutes,
+} from '@content/content-routes.interface';
 
 @Component({
   selector: 'app-post',
@@ -11,40 +13,60 @@ import { contentRoutes } from '@content/content-routes';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
-  @ViewChild(DemoContentDirective, { static: true })
-  demoContent: DemoContentDirective;
-
+  ePageType = EPageType; // determine which layout to use on template
   mdPost: string; // path to md file
-  postInfo;
+  postInfo: IContentCategoryRoutes;
+
+  private routeInfo: {
+    category: string;
+    postName: string;
+  };
+  private demoVcRef: ViewContainerRef;
 
   constructor(
     private route: ActivatedRoute,
-    private navigaitonService: NavigationService,
+    private navigationService: NavigationService,
     private contentLoaderService: ContentLoaderService
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.loadDemoContent(params.get('category'), params.get('postName'));
+      this.setupPage(params.get('category'), params.get('postName'));
     });
   }
 
-  private loadDemoContent(category: string, postName: string) {
+  onComponentLoaded(vcRef: ViewContainerRef): void {
+    this.loadDemoComponent(vcRef);
+    this.demoVcRef = vcRef;
+  }
+
+  private setupPage(category: string, postName: string): void {
+    this.routeInfo = {
+      category,
+      postName,
+    };
     try {
       this.postInfo = this.contentLoaderService.getPostInfo(category, postName);
 
       // load markdown
       this.mdPost = this.postInfo.post;
 
-      // load demo component
-      this.contentLoaderService.load(
-        category,
-        postName,
-        this.demoContent.viewContainerRef
-      );
+      if (this.demoVcRef) {
+        // if navigating to a different route with the same component,
+        // reuse exisiting loaded viewContainerRef to host demo component
+        this.loadDemoComponent(this.demoVcRef);
+      }
     } catch (e) {
-      this.navigaitonService.navigateToHome();
+      this.navigationService.navigateToHome();
       return;
     }
+  }
+
+  private loadDemoComponent(vcRef: ViewContainerRef): void {
+    this.contentLoaderService.load(
+      this.routeInfo.category,
+      this.routeInfo.postName,
+      vcRef
+    );
   }
 }

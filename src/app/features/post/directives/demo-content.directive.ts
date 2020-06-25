@@ -1,8 +1,19 @@
-import { Directive, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  ViewContainerRef,
+  EventEmitter,
+  Output,
+  AfterViewInit,
+} from '@angular/core';
 
 @Directive({
   selector: '[appDemoContent]',
 })
-export class DemoContentDirective {
+export class DemoContentDirective implements AfterViewInit {
+  @Output() componentLoaded = new EventEmitter<ViewContainerRef>();
   constructor(public viewContainerRef: ViewContainerRef) {}
+
+  ngAfterViewInit() {
+    this.componentLoaded.emit(this.viewContainerRef);
+  }
 }

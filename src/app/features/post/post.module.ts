@@ -5,7 +5,10 @@ import { PostComponent } from './post.component';
 import { PostRoutingModule } from './post-routing.module';
 import { ContainersModule } from '@shared/components/containers';
 import { DemoContentDirective } from './directives/demo-content.directive';
-import { TwoColumnModule } from '@shared/components/layouts';
+import {
+  SingleColumnModule,
+  TwoColumnModule,
+} from '@shared/components/layouts';
 import { ContentLoaderService } from '@content/content-loader.service';
 import { CONTENT_WIDGETS } from '@content/content-tokens';
 import { widgetArrayToObj } from '@content/content-widgets';
@@ -17,6 +20,7 @@ import { widgetArrayToObj } from '@content/content-widgets';
     MarkdownModule.forChild(),
     PostRoutingModule,
     ContainersModule,
+    SingleColumnModule,
     TwoColumnModule,
   ],
   providers: [

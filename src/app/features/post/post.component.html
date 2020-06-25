@@ -1,14 +1,27 @@
 <h1>{{ postInfo?.title }}</h1>
-<app-two-column>
-  <div left-section>
-    <div class="markdown-container">
-      <markdown [src]="mdPost"> </markdown>
+<ng-container [ngSwitch]="postInfo?.pageType">
+  <app-single-column *ngSwitchCase="ePageType.ContentOnly">
+    <ng-container *ngTemplateOutlet="markdown"></ng-container>
+  </app-single-column>
+
+  <app-two-column *ngSwitchCase="ePageType.ContentWithDemo">
+    <div left-section>
+      <ng-container *ngTemplateOutlet="markdown"></ng-container>
     </div>
-  </div>
-  <div right-section>
-    <div class="demo-container">
-      <ng-template appDemoContent></ng-template>
+    <div right-section>
+      <div class="demo-container">
+        <ng-template
+          appDemoContent
+          (componentLoaded)="onComponentLoaded($event)"
+        ></ng-template>
+      </div>
     </div>
+  </app-two-column>
+  <div *ngSwitchDefault></div>
+</ng-container>
+
+<ng-template #markdown>
+  <div class="markdown-container">
+    <markdown [src]="mdPost"> </markdown>
   </div>
-</app-two-column>
-<!-- ng switch between 2 columns and full page? -->
+</ng-template>

@@ -1,4 +1,4 @@
-import { IContentRoutes } from '@content/content-routes.interface';
+import { IContentRoutes, EPageType } from '@content/content-routes.interface';
 
 export const basicRoutes: IContentRoutes = {
   name: 'Basic',
@@ -17,7 +17,7 @@ export const basicRoutes: IContentRoutes = {
           (m) => m.StateChangeDemoModule
         ),
       post: 'assets/post-content/basic/state-change/state-change.content.md',
-      pageType: 'content-with-demo',
+      pageType: EPageType.ContentWithDemo,
     },
     {
       title: 'Enter Exit',
@@ -32,7 +32,7 @@ export const basicRoutes: IContentRoutes = {
           (m) => m.EnterExitDemoModule
         ),
       post: 'assets/post-content/basic/enter-exit/enter-exit.content.md',
-      pageType: 'content-with-demo',
+      pageType: EPageType.ContentWithDemo,
     },
   ],
 };

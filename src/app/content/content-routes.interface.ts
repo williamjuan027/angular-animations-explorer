@@ -15,5 +15,10 @@ export interface IContentCategoryRoutes {
   loadChildren?: () => Promise<NgModuleFactory<any> | Type<any>>;
   post: string;
   // categories: 'basic' | 'advanced' | 'concepts' | 'tips';
-  pageType: 'content-only' | 'content-with-demo';
+  pageType: EPageType;
+}
+
+export enum EPageType {
+  ContentOnly,
+  ContentWithDemo,
 }

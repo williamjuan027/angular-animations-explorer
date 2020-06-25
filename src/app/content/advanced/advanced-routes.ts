@@ -1,4 +1,4 @@
-import { IContentRoutes } from '@content/content-routes.interface';
+import { IContentRoutes, EPageType } from '@content/content-routes.interface';
 
 export const advancedRoutes: IContentRoutes = {
   name: 'Advanced',
@@ -17,7 +17,7 @@ export const advancedRoutes: IContentRoutes = {
           (m) => m.SequenceDemoModule
         ),
       post: 'assets/post-content/advanced/sequence/sequence.content.md',
-      pageType: 'content-with-demo',
+      pageType: EPageType.ContentWithDemo,
     },
     {
       title: 'Multi-step Animation using Angular Keyframes',
@@ -32,7 +32,7 @@ export const advancedRoutes: IContentRoutes = {
         ),
       post:
         'assets/post-content/advanced/sequence-keyframe/sequence-keyframe.content.md',
-      pageType: 'content-with-demo',
+      pageType: EPageType.ContentWithDemo,
     },
   ],
 };
