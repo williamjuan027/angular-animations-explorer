@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { contentRoutes } from '@content/content-routes';
-import { NavigationService } from '@core/services';
 import { SidenavComponent } from '@shared/components/navigations/sidenav';
 
 @Component({
@@ -10,7 +8,7 @@ import { SidenavComponent } from '@shared/components/navigations/sidenav';
 })
 export class AppComponent {
   @ViewChild('sidenav') sidenav: SidenavComponent;
-  constructor(private navigationService: NavigationService) {}
+  constructor() {}
 
   onMenuClick(): void {
     this.sidenav.toggle();

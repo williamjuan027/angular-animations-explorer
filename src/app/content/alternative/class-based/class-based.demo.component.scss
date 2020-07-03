@@ -1,0 +1,29 @@
+.card {
+  transition: all 0.5s;
+
+  &.card-reset {
+    transform: scale(1);
+  }
+
+  // CSS Transition animation
+  &.card-transform {
+    transform: scale(0.8);
+  }
+
+  // CSS Keyframe animation
+  &.card-keyframe {
+    animation: pulse 1s;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

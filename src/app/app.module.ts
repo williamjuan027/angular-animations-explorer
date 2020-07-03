@@ -18,7 +18,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavigationsModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
