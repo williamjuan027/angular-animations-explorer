@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ContainersModule } from '@shared/components/containers';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SingleColumnModule } from '@shared/components/layouts';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -12,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     HomeRoutingModule,
     ContainersModule,
+    SingleColumnModule,
   ],
 })
 export class HomeModule {}
