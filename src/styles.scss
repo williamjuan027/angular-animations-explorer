@@ -50,4 +50,18 @@ markdown {
   code {
     white-space: pre-wrap;
   }
+  img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+  h3 {
+    font-weight: bold !important;
+  }
+  h5 {
+    // workaround: this is used for styling image descriptions
+    text-align: center;
+    font-style: italic !important;
+    margin-top: -10px !important;
+  }
 }
