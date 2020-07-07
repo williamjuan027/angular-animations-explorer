@@ -58,18 +58,7 @@
 <ng-template #cards>
   <ng-container *ngFor="let item of list; let i = index">
     <div class="card">
-      <app-card>
-        <div
-          fxLayout="row"
-          fxLayoutAlign="space-between center"
-          class="card-container"
-        >
-          <span>{{ item.name }}</span>
-          <span class="material-icons">
-            thumb_up_alt
-          </span>
-        </div>
-      </app-card>
+      <app-card-demo-sample></app-card-demo-sample>
     </div>
   </ng-container>
 </ng-template>

@@ -1,0 +1,23 @@
+<app-card>
+  <div
+    gdGap="1rem"
+    gdAreas="image name name | image price cart"
+    gdColumns="auto 1fr auto"
+    gdRows="auto auto"
+    class="card-container"
+  >
+    <img gdArea="image" [src]="currentCard.image" />
+    <span gdArea="name" class="name">{{ currentCard.name }}</span>
+
+    <span gdArea="price" gdGridAlign="start center" class="price">{{
+      currentCard.price | currency
+    }}</span>
+    <span
+      gdArea="cart"
+      gdGridAlign="end center"
+      class="material-icons cart-icon"
+    >
+      add_shopping_cart
+    </span>
+  </div>
+</app-card>
