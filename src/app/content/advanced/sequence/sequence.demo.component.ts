@@ -14,14 +14,6 @@ type TSequence = 'SEQUENCE' | 'GROUP' | 'STAGGER' | null;
   animations: [FadeGrowSequence, FadeGrowGroup, FadeGrowStagger],
 })
 export class SequenceDemoComponent {
-  list: { name: string; isFavorite: boolean }[] = [
-    { name: 'First', isFavorite: false },
-    { name: 'Second', isFavorite: false },
-    { name: 'Third', isFavorite: false },
-    { name: 'Fourth', isFavorite: false },
-    { name: 'Fifth', isFavorite: false },
-  ];
-
   sequenceSelected: TSequence = 'SEQUENCE';
   sequenceChangeQueued: TSequence = 'SEQUENCE';
 

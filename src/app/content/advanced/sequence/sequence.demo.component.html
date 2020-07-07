@@ -37,28 +37,14 @@
   </ng-container>
 </div>
 
-<!-- TODO: refactor this so no repeated code -->
-<ng-template #card>
-  <div>
-    <app-card>
-      <div
-        fxLayout="row"
-        fxLayoutAlign="space-between center"
-        class="card-container"
-      >
-        <span>First</span>
-        <span class="material-icons">
-          thumb_up_alt
-        </span>
-      </div>
-    </app-card>
-  </div>
+<ng-template #cards>
+  <ng-container *ngFor="let item of [0, 1, 2, 3, 4, 5]; let i = index">
+    <ng-container *ngTemplateOutlet="card"></ng-container>
+  </ng-container>
 </ng-template>
 
-<ng-template #cards>
-  <ng-container *ngFor="let item of list; let i = index">
-    <div class="card">
-      <app-card-demo-sample></app-card-demo-sample>
-    </div>
-  </ng-container>
+<ng-template #card>
+  <div class="card">
+    <app-card-demo-sample></app-card-demo-sample>
+  </div>
 </ng-template>
