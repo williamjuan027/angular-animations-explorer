@@ -34,5 +34,19 @@ export const advancedRoutes: IContentRoutes = {
         'assets/post-content/advanced/sequence-keyframe/sequence-keyframe.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Animate Children Elements',
+      description: '',
+      image:
+        'https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9',
+      tags: ['advanced', 'angular animations'],
+      path: 'children',
+      loadChildren: () =>
+        import('./children/children.demo.module').then(
+          (m) => m.ChildrenDemoModule
+        ),
+      post: 'assets/post-content/advanced/children/children.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
