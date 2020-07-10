@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Installing Lib Dependencies and Building
-        run: npm install && npm run build
+        run: npm install && npm run build -- --base-href https://williamjuan027.github.io/angular-animations-explorer/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
