@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() hoverEnabled: boolean = false;
+  @Input() hoverEnabled = false;
 }

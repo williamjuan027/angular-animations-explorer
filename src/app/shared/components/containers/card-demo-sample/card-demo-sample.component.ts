@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CardDemoSampleData } from './card-demo-sample.data';
 
 @Component({
@@ -7,6 +7,7 @@ import { CardDemoSampleData } from './card-demo-sample.data';
   styleUrls: ['./card-demo-sample.component.scss'],
 })
 export class CardDemoSampleComponent {
+  @Input() hoverEnabled = false;
   currentCard =
     CardDemoSampleData[this.getRandomInt(CardDemoSampleData.length)];
 

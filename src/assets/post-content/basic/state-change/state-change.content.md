@@ -7,15 +7,18 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ...
   animations: [
     trigger('animationName', [
-      state('moveRight', style({
-        transform: 'translateX(100%)',
-      })),
-      state('moveLeft',   style({
-        transform: 'translateX(-100%)',
-      })),
-      state('rotate',   style({
-        transform: 'rotateY(180deg) rotateZ(90deg)',
-      })),
+      state(
+        'default',
+        style({
+          opacity: 1,
+        })
+      ),
+      state(
+        'disabled',
+        style({
+          opacity: 0.5,
+        })
+      ),
       transition('* => *', animate('300ms ease-out')),
     ])
   ]

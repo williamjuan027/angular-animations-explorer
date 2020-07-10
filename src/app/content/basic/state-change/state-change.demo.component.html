@@ -1,20 +1,9 @@
 <div>
-  <ng-container *ngFor="let item of list; let i = index">
-    <app-card>
-      <div
-        fxLayout="row"
-        fxLayoutAlign="space-between center"
-        class="card-container"
-        (click)="toggleFavorite(i)"
-      >
-        <span>{{ item.name }}</span>
-        <span
-          [@favoriteStateChange]="item.isFavorite ? 'favorite' : 'default'"
-          class="material-icons"
-        >
-          thumb_up_alt
-        </span>
-      </div>
-    </app-card>
-  </ng-container>
+  <app-button-basic
+    [text]="isEnabled ? 'disable' : 'enable'"
+    (click)="toggleIsEnabled()"
+  ></app-button-basic>
+  <div class="card" [@enabledStateChange]="isEnabled ? 'enabled' : 'disabled'">
+    <app-card-demo-sample [hoverEnabled]="isEnabled"></app-card-demo-sample>
+  </div>
 </div>
