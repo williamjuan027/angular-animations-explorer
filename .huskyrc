@@ -1,0 +1,6 @@
+{
+    "hooks": {
+        "pre-commit": "pretty-quick --staged && ng lint && ng test --watch=false",
+        "pre-push": "ng build --aot true"
+    }
+}
