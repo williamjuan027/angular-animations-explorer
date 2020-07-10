@@ -2,6 +2,8 @@ mat-sidenav-container {
   height: calc(100% - 64px);
   mat-sidenav {
     width: 15rem;
+    border: none;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     ul {
       list-style: none;
       margin: 0;
@@ -22,5 +24,8 @@ mat-sidenav-container {
         }
       }
     }
+  }
+  mat-sidenav-content {
+    background-color: #fff;
   }
 }

@@ -9,7 +9,7 @@ export const alternativeRoutes: IContentRoutes = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       image:
-        'https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9',
+        'assets/post-content/alternative/class-based/hero.svg',
       tags: ['alternative', 'css animations'],
       path: 'class-based',
       loadChildren: () =>
