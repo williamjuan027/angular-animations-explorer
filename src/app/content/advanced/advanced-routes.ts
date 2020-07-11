@@ -8,8 +8,7 @@ export const advancedRoutes: IContentRoutes = {
       title: 'Sequence',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'assets/post-content/advanced/sequence/hero.svg',
+      image: 'assets/post-content/advanced/sequence/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'sequence',
       loadChildren: () =>
@@ -23,8 +22,7 @@ export const advancedRoutes: IContentRoutes = {
       title: 'Multi-step Animation using Angular Keyframes',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'assets/post-content/advanced/sequence-keyframe/hero.svg',
+      image: 'assets/post-content/advanced/sequence-keyframe/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'sequence-keyframe',
       loadChildren: () =>
@@ -36,11 +34,22 @@ export const advancedRoutes: IContentRoutes = {
       pageType: EPageType.ContentWithDemo,
     },
     {
+      title: 'Target Multiple Elements (Query)',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/advanced/query/hero.svg',
+      tags: ['advanced', 'angular animations'],
+      path: 'query',
+      loadChildren: () =>
+        import('./query/query.demo.module').then((m) => m.QueryDemoModule),
+      post: 'assets/post-content/advanced/query/query.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
+    {
       title: 'Animate Children Elements',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'assets/post-content/advanced/children/hero.svg',
+      image: 'assets/post-content/advanced/children/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'children',
       loadChildren: () =>

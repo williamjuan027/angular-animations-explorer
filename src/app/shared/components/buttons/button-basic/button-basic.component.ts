@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonBasicComponent {
   @Input() text?: string;
+  @Input() disabled = false;
 }
