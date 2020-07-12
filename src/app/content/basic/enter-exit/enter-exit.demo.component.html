@@ -2,6 +2,6 @@
   [text]="cardIsDisplayed ? 'hide' : 'show'"
   (click)="toggleCard()"
 ></app-button-basic>
-<div *ngIf="cardIsDisplayed" @fadeInOut>
+<div *ngIf="cardIsDisplayed" @fadeSlideInOut>
   <app-card-demo-sample></app-card-demo-sample>
 </div>

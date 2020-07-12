@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <app-button-basic
+      [text]="isScaledDown ? 'zoom in' : 'zoom out'"
+      (click)="toggleScale()"
+    ></app-button-basic>
+  </div>
+  <div>
+    <ng-container *ngFor="let item of [0, 1, 2]; let i = index">
+      <div
+        class="card"
+        [style.transform]="isScaledDown ? getScaleDown(i) : getResetScale()"
+        [style.transition]="'0.5s'"
+      >
+        <app-card-demo-sample></app-card-demo-sample>
+      </div>
+    </ng-container>
+  </div>
+</div>
