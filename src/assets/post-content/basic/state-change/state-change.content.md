@@ -6,7 +6,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   ...
   animations: [
-    trigger('animationName', [
+    trigger('enabledStateChange', [
       state(
         'default',
         style({
@@ -38,5 +38,5 @@ _`style`, `transition`, and `animate` all accepts both grouped (as an array) and
 And in your template, all you need to do is add the animation name defined previously prefixed with `@` and bind it to a variable that will toggle between the states and angular handles the rest.
 
 ```markup
-<div [@animationName]="stateOfElement">...</div>
+<div [@enabledStateChange]="stateOfElement">...</div>
 ```
