@@ -31,5 +31,20 @@ export const alternativeRoutes: IContentRoutes = {
       post: 'assets/post-content/alternative/inline/inline.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Web Animations API',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/alternative/web-animations-api/hero.svg',
+      tags: ['alternative', 'css animations'],
+      path: 'web-animations-api',
+      loadChildren: () =>
+        import('./web-animations-api/web-animations-api.demo.module').then(
+          (m) => m.WebAnimationsApiDemoModule
+        ),
+      post:
+        'assets/post-content/alternative/web-animations-api/web-animations-api.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
