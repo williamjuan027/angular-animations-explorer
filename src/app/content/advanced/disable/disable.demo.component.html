@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <app-button-basic
+      (click)="toggleIsDisabled()"
+      [disabled]="isAnimating"
+      [text]="isDisabled ? 'enable' : 'disable'"
+    ></app-button-basic>
+    <app-button-basic
+      (click)="playAnimation()"
+      [disabled]="isAnimating"
+      text="play"
+    ></app-button-basic>
+  </div>
+  <div [@.disabled]="isDisabled">
+    <div
+      class="card"
+      [@pulseAnimation]="isAnimating"
+      (@pulseAnimation.done)="animationDone()"
+    >
+      <app-card-demo-sample></app-card-demo-sample>
+    </div>
+  </div>
+</div>

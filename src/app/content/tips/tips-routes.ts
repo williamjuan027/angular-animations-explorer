@@ -30,7 +30,7 @@ export const performanceRoutes: IContentRoutes = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       image: 'assets/post-content/tips/disable-testing/hero.svg',
       tags: ['tips'],
-      path: 'debugging',
+      path: 'disable-testing',
       post:
         'assets/post-content/tips/disable-testing/disable-testing.content.md',
       pageType: EPageType.ContentOnly,

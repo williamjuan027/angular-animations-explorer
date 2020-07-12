@@ -59,5 +59,19 @@ export const advancedRoutes: IContentRoutes = {
       post: 'assets/post-content/advanced/children/children.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Disable Animation',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/advanced/disable/hero.svg',
+      tags: ['advanced', 'angular animations'],
+      path: 'disable',
+      loadChildren: () =>
+        import('./disable/disable.demo.module').then(
+          (m) => m.DisableDemoModule
+        ),
+      post: 'assets/post-content/advanced/disable/disable.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
