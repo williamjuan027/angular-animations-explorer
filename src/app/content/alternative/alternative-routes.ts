@@ -46,5 +46,20 @@ export const alternativeRoutes: IContentRoutes = {
         'assets/post-content/alternative/web-animations-api/web-animations-api.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Attribute Directive and Animation Builder',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/alternative/attribute-directive/hero.svg',
+      tags: ['alternative'],
+      path: 'attribute-directive',
+      loadChildren: () =>
+        import('./attribute-directive/attribute-directive.demo.module').then(
+          (m) => m.AttributeDirectiveDemoModule
+        ),
+      post:
+        'assets/post-content/alternative/attribute-directive/attribute-directive.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
