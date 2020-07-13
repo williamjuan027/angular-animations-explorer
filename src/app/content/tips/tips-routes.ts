@@ -35,5 +35,17 @@ export const performanceRoutes: IContentRoutes = {
         'assets/post-content/tips/disable-testing/disable-testing.content.md',
       pageType: EPageType.ContentOnly,
     },
+    {
+      title: 'Reusing Animations',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/tips/reuse/hero.svg',
+      tags: ['tips'],
+      path: 'reuse',
+      post: 'assets/post-content/tips/reuse/reuse.content.md',
+      loadChildren: () =>
+        import('./reuse/reuse.demo.module').then((m) => m.ReuseDemoModule),
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
