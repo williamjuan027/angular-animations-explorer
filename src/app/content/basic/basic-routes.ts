@@ -5,11 +5,20 @@ export const basicRoutes: IContentRoutes = {
   path: 'basic',
   routes: [
     {
+      title: 'Overview',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/basic/overview/hero.svg',
+      tags: ['basic', 'overview', 'angular animations'],
+      path: 'overview',
+      post: 'assets/post-content/basic/overview/overview.content.md',
+      pageType: EPageType.ContentOnly,
+    },
+    {
       title: 'State Change',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'assets/post-content/basic/state-change/hero.svg',
+      image: 'assets/post-content/basic/state-change/hero.svg',
       tags: ['basic', 'angular animations'],
       path: 'state-change',
       loadChildren: () =>
@@ -23,8 +32,7 @@ export const basicRoutes: IContentRoutes = {
       title: 'Enter Exit',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'assets/post-content/basic/enter-exit/hero.svg',
+      image: 'assets/post-content/basic/enter-exit/hero.svg',
       tags: ['basic', 'angular animations'],
       path: 'enter-exit',
       loadChildren: () =>
