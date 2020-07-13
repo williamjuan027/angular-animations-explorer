@@ -1,8 +1,8 @@
 <app-toolbar (menuClick)="onMenuClick()"></app-toolbar>
 <app-sidenav #sidenav>
   <div main-content>
-    <div class="app-container">
-      <router-outlet></router-outlet>
+    <div class="app-container" [@routeFadeAnimation]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
 </app-sidenav>

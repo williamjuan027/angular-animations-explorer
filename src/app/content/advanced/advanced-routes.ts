@@ -73,5 +73,15 @@ export const advancedRoutes: IContentRoutes = {
       post: 'assets/post-content/advanced/disable/disable.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Route Animations',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'assets/post-content/advanced/route/hero.svg',
+      tags: ['advanced', 'angular animations', 'route'],
+      path: 'route',
+      post: 'assets/post-content/advanced/route/route.content.md',
+      pageType: EPageType.ContentOnly,
+    },
   ],
 };
