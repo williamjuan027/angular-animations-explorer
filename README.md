@@ -1,27 +1,24 @@
-# AngularAnimationsExplorer
+# Angular Animations Explorer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+Animations can be both fun and frustrating to build, and I came to realize that there are a lot of different ways to choose from when it comes to implementing an animation. This makes building out animations really flexible, but at the same time could also be overwhelming given the number of options to choose from.
 
-## Development server
+This project is a demo for "In-Depth guide into animations in Angular" on indepth.dev, with the goal of providing a live version of all the methods covered in the article that you could explore and play around with.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Check out the site here: http://williamjuan027.github.io/angular-animations-explorer/
 
-## Code scaffolding
+**This is not meant to be as comprehensive or a replacement for documentation, but rather a quick way to showcase the different animation methods that are available, look at their behavior and some use cases, and the code behind the implementation.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+_Enjoy :)_
 
-## Build
+## Build Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+# install dependencies
+npm install
 
-## Running unit tests
+# serve with hot reload at localhost:4200
+npm run start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# build for production
+npm run build
+```
