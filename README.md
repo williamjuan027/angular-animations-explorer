@@ -2,9 +2,10 @@
 
 > A resource to showcase the different animations that you could do with Angular
 
-[![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)]()
-[![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=for-the-badge)]()
+[![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)]()
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
+[![social](https://img.shields.io/twitter/follow/williamjuan27?color=%23249FEC&label=follow%20me%20on%20twitter&style=for-the-badge)](https://twitter.com/williamjuan27)
 
 Animations can be both fun and frustrating to build, and I came to realize that there are a lot of different ways to choose from when it comes to implementing an animation. This makes building out animations really flexible, but at the same time could also be overwhelming given the number of options.
 
