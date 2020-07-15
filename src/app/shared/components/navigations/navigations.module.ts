@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ToolbarComponent } from './toolbar';
 import { SidenavComponent } from './sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const COMPONENTS = [ToolbarComponent, SidenavComponent];
 
@@ -14,6 +15,7 @@ const COMPONENTS = [ToolbarComponent, SidenavComponent];
   declarations: [...COMPONENTS],
   imports: [
     CommonModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,

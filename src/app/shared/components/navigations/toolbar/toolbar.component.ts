@@ -16,4 +16,8 @@ export class ToolbarComponent {
   toggleMenu(): void {
     this.menuClick.emit();
   }
+
+  navigateToGithub(): void {
+    this.navigationService.navigateToGithub();
+  }
 }

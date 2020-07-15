@@ -20,4 +20,14 @@ export class NavigationService {
   navigateToPost(category: string, postName: string): void {
     this.router.navigate([`/post/${category}/${postName}`]);
   }
+
+  navigateToGithub(): void {
+    this.openLinkInNewTab(
+      'https://github.com/williamjuan027/angular-animations-explorer'
+    );
+  }
+
+  private openLinkInNewTab(url: string): void {
+    window.open(url, '_blank');
+  }
 }
