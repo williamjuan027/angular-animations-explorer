@@ -34,5 +34,5 @@ npm run build
 
 There are 2 main folders that contains the bulk of the content in the application.
 
-- **Content**: All the content you see on the application are written in markdown located in [`src/app/assets/post-content/`](src/app/assets/post-content) in their respective folders.
+- **Content**: All the content you see on the application are written in markdown located in [`src/assets/post-content/`](src/assets/post-content) in their respective folders.
 - **Demo**: For posts that contains a demo component, these components are located in [`src/app/content/`](src/app/content/) as separate modules in their respective folders.
