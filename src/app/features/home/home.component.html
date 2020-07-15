@@ -1,22 +1,30 @@
 <app-single-column>
   <div class="home-container">
-    <ng-container *ngFor="let category of contents">
-      <h2>{{ category.name }}</h2>
-      <div fxLayout="row wrap">
-        <ng-container *ngFor="let post of category.routes">
-          <div
-            fxFlex.lt-sm="100"
-            fxFlex.lt-md="50"
-            fxFlex="33%"
-            class="card-container"
-          >
-            <app-card-quicklink
-              [config]="post"
-              (click)="navigateToPost(category.path, post.path)"
-            ></app-card-quicklink>
-          </div>
-        </ng-container>
-      </div>
-    </ng-container>
+    <!-- Intro blurb -->
+    <div class="markdown-container">
+      <h2>Hi there 👋</h2>
+      <markdown src="assets/post-content/misc/intro/intro.content.md">
+      </markdown>
+    </div>
+    <div class="cards-container">
+      <ng-container *ngFor="let category of contents">
+        <h2>{{ category.name }}</h2>
+        <div fxLayout="row wrap">
+          <ng-container *ngFor="let post of category.routes">
+            <div
+              fxFlex.lt-sm="100"
+              fxFlex.lt-md="50"
+              fxFlex="33%"
+              class="card-container"
+            >
+              <app-card-quicklink
+                [config]="post"
+                (click)="navigateToPost(category.path, post.path)"
+              ></app-card-quicklink>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </app-single-column>
