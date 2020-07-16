@@ -7,7 +7,7 @@ export const advancedRoutes: IContentRoutes = {
     {
       title: 'Sequence',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Control the timing and sequences of your animations using group, sequence, and stagger.',
       image: 'assets/post-content/advanced/sequence/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'sequence',
@@ -21,7 +21,7 @@ export const advancedRoutes: IContentRoutes = {
     {
       title: 'Multi-step Animation using Angular Keyframes',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Add multiple steps to your animation using keyframes with Angular animations.',
       image: 'assets/post-content/advanced/sequence-keyframe/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'sequence-keyframe',
@@ -36,7 +36,7 @@ export const advancedRoutes: IContentRoutes = {
     {
       title: 'Target Multiple Elements (Query)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Apply the same animation to multiple different targets elements using the built in function query.',
       image: 'assets/post-content/advanced/query/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'query',
@@ -47,8 +47,7 @@ export const advancedRoutes: IContentRoutes = {
     },
     {
       title: 'Animate Children Elements',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      description: 'Control individual children animations from their parent.',
       image: 'assets/post-content/advanced/children/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'children',
@@ -62,7 +61,7 @@ export const advancedRoutes: IContentRoutes = {
     {
       title: 'Disable Animation',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Conditionally disable animation for a single component or your entire application.',
       image: 'assets/post-content/advanced/disable/hero.svg',
       tags: ['advanced', 'angular animations'],
       path: 'disable',
@@ -76,7 +75,7 @@ export const advancedRoutes: IContentRoutes = {
     {
       title: 'Route Animations',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Animate route changes by adding custom animations to your router outlet.',
       image: 'assets/post-content/advanced/route/hero.svg',
       tags: ['advanced', 'angular animations', 'route'],
       path: 'route',

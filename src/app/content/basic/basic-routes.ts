@@ -7,7 +7,7 @@ export const basicRoutes: IContentRoutes = {
     {
       title: 'Overview',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'High level overview of Angular animations, how it works, and how to use them in your project.',
       image: 'assets/post-content/basic/overview/hero.svg',
       tags: ['basic', 'overview', 'angular animations'],
       path: 'overview',
@@ -17,7 +17,7 @@ export const basicRoutes: IContentRoutes = {
     {
       title: 'State Change',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Add custom animations to transitions between different states of an element.',
       image: 'assets/post-content/basic/state-change/hero.svg',
       tags: ['basic', 'angular animations'],
       path: 'state-change',
@@ -31,7 +31,7 @@ export const basicRoutes: IContentRoutes = {
     {
       title: 'Enter Exit',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Custom animations for elements entering and leaving the view.',
       image: 'assets/post-content/basic/enter-exit/hero.svg',
       tags: ['basic', 'angular animations'],
       path: 'enter-exit',

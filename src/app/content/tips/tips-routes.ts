@@ -7,7 +7,7 @@ export const performanceRoutes: IContentRoutes = {
     {
       title: 'Performance',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Understand the different implications of animating different properties and the different animation methods.',
       image: 'assets/post-content/tips/performance/hero.svg',
       tags: ['tips'],
       path: 'performance',
@@ -16,8 +16,7 @@ export const performanceRoutes: IContentRoutes = {
     },
     {
       title: 'Debugging',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      description: `Use animation specific features in browsers' devtools to help debug your animation code.`,
       image: 'assets/post-content/tips/debugging/hero.svg',
       tags: ['tips'],
       path: 'debugging',
@@ -27,7 +26,7 @@ export const performanceRoutes: IContentRoutes = {
     {
       title: 'Disable Animations during Testing',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Speed up your unit tests by disabling animation when its not part of your test cases.',
       image: 'assets/post-content/tips/disable-testing/hero.svg',
       tags: ['tips'],
       path: 'disable-testing',
@@ -38,7 +37,7 @@ export const performanceRoutes: IContentRoutes = {
     {
       title: 'Reusing Animations',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Ways to abstract out common animation code so it can be reused more easily in your application.',
       image: 'assets/post-content/tips/reuse/hero.svg',
       tags: ['tips'],
       path: 'reuse',

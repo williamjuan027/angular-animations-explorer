@@ -7,7 +7,7 @@ export const alternativeRoutes: IContentRoutes = {
     {
       title: 'Class Based Animations',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Use CSS keyframes or transitions by dynamically adding and removing classes.',
       image: 'assets/post-content/alternative/class-based/hero.svg',
       tags: ['alternative', 'css animations'],
       path: 'class-based',
@@ -22,7 +22,7 @@ export const alternativeRoutes: IContentRoutes = {
     {
       title: 'Inline Animations',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Pass in dynamic values to your animation using inline styling to trigger animations.',
       image: 'assets/post-content/alternative/inline/hero.svg',
       tags: ['alternative', 'css animations'],
       path: 'inline',
@@ -34,7 +34,7 @@ export const alternativeRoutes: IContentRoutes = {
     {
       title: 'Web Animations API',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Take full control of your animations by accessing web animations API directly.',
       image: 'assets/post-content/alternative/web-animations-api/hero.svg',
       tags: ['alternative', 'css animations'],
       path: 'web-animations-api',
@@ -49,7 +49,7 @@ export const alternativeRoutes: IContentRoutes = {
     {
       title: 'Attribute Directive and Animation Builder',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Add custom events to trigger your animations and make it reusable by wrapping it into a directive.',
       image: 'assets/post-content/alternative/attribute-directive/hero.svg',
       tags: ['alternative'],
       path: 'attribute-directive',

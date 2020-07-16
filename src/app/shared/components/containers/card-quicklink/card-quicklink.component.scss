@@ -1,15 +1,15 @@
 .card-content-container {
-  // TODO: find a better solution
-  //   width: 30vw;
   h2 {
     margin: 0 !important;
-    min-height: 4rem
+    min-height: 4rem;
   }
   span {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-size: 0.85rem;
+    min-height: 4rem;
   }
   img {
     max-width: 100%;
