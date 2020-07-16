@@ -36,3 +36,12 @@ There are 2 main folders that contains the bulk of the content in the applicatio
 
 - **Content**: All the content you see on the application are written in markdown located in [`src/assets/post-content/`](src/assets/post-content) in their respective folders.
 - **Demo**: For posts that contains a demo component, these components are located in [`src/app/content/`](src/app/content/) as separate modules in their respective folders.
+
+## Attributions
+
+Special thanks to the following projects:
+
+- Illustrations from [undraw.co](https://undraw.co)
+- Layouts using [Flex Layout](https://github.com/angular/flex-layout)
+- Basic components from [Angular Material](https://material.angular.io/)
+- Markdown parser from [ngx-markdown](https://github.com/jfcere/ngx-markdown)
