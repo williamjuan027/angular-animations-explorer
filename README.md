@@ -7,7 +7,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![social](https://img.shields.io/twitter/follow/williamjuan27?color=%23249FEC&label=follow%20me&logo=twitter&style=for-the-badge)](https://twitter.com/williamjuan27)
 
-This project is a demo for "In-Depth guide into animations in Angular" on indepth.dev, with the goal of providing a live version of all the methods covered in the article that you could explore and play around with.
+This project is a demo for [In-Depth guide into animations in Angular](https://indepth.dev/in-depth-guide-into-animations-in-angular) on indepth.dev, with the goal of providing a live version of all the methods covered in the article that you could explore and play around with.
 
 It is broken down into different sections the same way the article is, so you should expect every section in the article that has an example also has the live version on the demo application. Some of the demo might have the same animation written in different ways. This is done intentionally to showcase how the different ways are reflected both visually on the UI and how the browser interprets the code.
 
