@@ -1,4 +1,4 @@
-A lot of times some animations get reused in several places in the application which tend to lead to duplicated animation code in several components. We could abstract our animation code a few different ways depending on the use case which I will show below to keep our animation code as DRY as possible.
+A lot of times some animations get reused in several places in the application which tend to lead to duplicated animation code in several components. We could abstract our animation code in a few different ways depending on the use case which I will show below to keep our animation code as DRY as possible.
 
 ## Abstracting the entire animation trigger
 
@@ -47,4 +47,4 @@ trigger('slide', [
 ]),
 ```
 
-The major difference here compared to a regular animation is the use of the `useAnimation` method in place of the array of animations, which in turn accepts the animation we created and a `params` object with any additional parameters that the animation might expect.
+The major difference here compared to a regular animation is the use of the `useAnimation` method in place of the array of animations, which accepts the animation we created and a `params` object with any additional parameters that the animation might expect.

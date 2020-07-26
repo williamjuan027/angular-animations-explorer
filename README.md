@@ -15,6 +15,8 @@ Check out the site here: http://williamjuan027.github.io/angular-animations-expl
 
 _This is not meant to be as comprehensive or a replacement for documentation, but rather a quick way to showcase the different animation methods that are available, look at their behavior and some use cases, and the code behind the implementation._
 
+If you like my work, feel free to tweet about it or star this repository.
+
 **Enjoy :)**
 
 ## Build Setup
