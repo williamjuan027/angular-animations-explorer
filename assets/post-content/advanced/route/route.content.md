@@ -1,8 +1,8 @@
 > _No specific demo for this, but if you haven't noticed, there are some route animations that are applied as you navigate from the home page to any of the posts and vice versa._
 
-Route animations refers to the animations that are applied to view transitions during a route change. As per the [Angular docs](https://angular.io/guide/route-animations), this is done by defining a nested animation sequence in the top-level component that hosts the view and the components that host the embedded views. This could also be applied to nested `router-outlet`s in your application, the animation trigger just needs to be applied to the `div` that wraps the `router-outlet`
+Route animations refers to the animations that are applied to view transitions during a route change. As per the [Angular docs](https://angular.io/guide/route-animations), this is done by defining a nested animation sequence in the top-level component that hosts the view and the components that host the embedded views. This could also be applied to nested `router-outlet`s in your application, the animation trigger just needs to be applied to the `div` that wraps the `router-outlet`.
 
-To demonstrate this, we will first need to wrap the `router-outlet` inside a `div` which will contain the trigger for the animation and add an attribute directive in the `router-outlet` that contains data about active routes and their states which is then used to assign an animation state value to the animation trigger based on the route configuration.
+To demonstrate this, we will first need to wrap the `router-outlet` inside a `div` which will contain the trigger for the animation. Then add an attribute directive in the `router-outlet` that contains data about active routes and their states which is then used to assign an animation state value to the animation trigger based on the route configuration.
 
 ```html
 <div @routeAnimations>
@@ -16,7 +16,7 @@ To demonstrate this, we will first need to wrap the `router-outlet` inside a `di
 </div>
 ```
 
-We will then need to pass the outlet’s current state to our `routeAnimations` using the `router-outlet`’s `activatedRoute` property. This property will get updated every time a navigation occurs which in turn will trigger our animation. We will use a helper function `prepareRoute` to do the necessary checks and return the value required by the `routeAnimation` trigger.
+Secondly, we need to pass the outlet’s current state to our `routeAnimations` using the `router-outlet`’s `activatedRoute` property. This property will get updated every time a navigation occurs which in turn will trigger our animation. We will use a helper function `prepareRoute` to do the necessary checks and return the value required by the `routeAnimation` trigger.
 
 ```ts
 prepareRoute(outlet: RouterOutlet) {
@@ -68,7 +68,9 @@ trigger('routeFadeAnimation', [
 ]);
 ```
 
-The `query` here is executed in the order of the array (looking at the code above, it will be executed from top down). The first `resetRoute` gets executed first which will hide and set some properties to both the previous and current view to allow them to overlap as both the views will be present in the DOM at the same time (the view that is being navigated to appears immediately instead of appearing after the view being navigated from has disappeared) preventing them from stacking up and breaking the layout. This is then followed by the actual animations for the entering view and the exiting view. There is no difference in writing animation code for route animation and animation that targets regular html elements or angular components which means we could use all of the animation properties that we would normally use on an element and apply to our route animation as we see fit.
+The elements in the `query` array are executed in the order they are in (looking at the code above, it will be executed from top down). The first `resetRoute` gets executed first which will hide and set some properties to both the previous and current view to allow them to overlap. Both the views will be present in the DOM at the same time (the view that is being navigated to appears immediately instead of appearing after the view being navigated from has disappeared) preventing them from stacking up and breaking the layout. This is followed by the actual animations for the entering view and the leaving view.
+
+There is no difference in writing animation code for route animation and animation that targets regular html elements or Angular components. Therefore, we could use all of the animation properties that we would normally use on an element and apply to our route animation as we see fit.
 
 ## Variable Route Animations
 
@@ -87,7 +89,7 @@ We can also pass in additional parameters through the router’s `data` property
   }
 ```
 
-In order to get the additional parameter and use it in our animation, we will have to modify the `prepareRoute` function to return the additional parameter. So instead of returning the router’s state, we will use the `activatedRouteData` property to access the `data` object and select the `animation` property.
+In order to get the additional parameter and use it in our animation, we will have to modify the `prepareRoute` function to return the additional parameter. Instead of returning the router’s state, we will use the `activatedRouteData` property to access the `data` object and select the `animation` property.
 
 ```ts
 prepareRoute(outlet: RouterOutlet) {

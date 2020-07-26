@@ -14,6 +14,6 @@ trigger('fadeSlideInOut', [
 
 And to use it in your template, all you need to do is add the trigger name prefixed by `@`. Since it is exclusively using the `:enter` and `:leave` aliases, we don't have to bind it to anything.
 
-```markup
+```html
 <div *ngIf="show" @fadeSlideInOut>...</div>
 ```
