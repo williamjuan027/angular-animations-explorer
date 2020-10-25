@@ -1,6 +1,6 @@
 import { IContentRoutes, EPageType } from '@content/content-routes.interface';
 
-export const performanceRoutes: IContentRoutes = {
+export const tipsRoutes: IContentRoutes = {
   name: 'Tips',
   path: 'tips',
   routes: [
