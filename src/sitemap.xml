@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://williamjuan027.github.io/angular-animations-explorer/</loc><priority>0.5</priority></url>
 <url><loc>https://williamjuan027.github.io/angular-animations-explorer/home</loc><priority>0.5</priority></url>
-<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/overview><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/overview</loc><priority>0.5</priority></url>
 <url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/state-change</loc><priority>0.5</priority></url>
 <url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/enter-exit</loc><priority>0.5</priority></url>
 <url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/sequence</loc><priority>0.5</priority></url>
