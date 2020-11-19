@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/home</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/overview><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/state-change</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/basic/enter-exit</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/sequence</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/sequence-keyframe</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/query</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/children</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/disable</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/advanced/route</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/alternative/class-based</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/alternative/class-based</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/alternative/inline</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/alternative/web-animations-api</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/alternative/attribute-directive</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/tips/performance</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/tips/debugging</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/tips/disable-testing</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/tips/reuse</loc><priority>0.5</priority></url>
+<url><loc>https://williamjuan027.github.io/angular-animations-explorer/post/integrations/nativescript</loc><priority>0.5</priority></url>
+</urlset>
