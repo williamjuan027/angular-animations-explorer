@@ -29,9 +29,7 @@ export class ContentLoaderService {
         .find((contentCategory) => contentCategory.path === category)
         .routes.find((categoryPost) => categoryPost.path === post);
       return route;
-    } catch (e) {
-      throw e;
-    }
+    } catch (e) {}
   }
 
   async load(category: string, post: string, container: ViewContainerRef) {
@@ -54,8 +52,6 @@ export class ContentLoaderService {
         entryComponent
       );
       container.createComponent(compFactory);
-    } catch (e) {
-      throw e;
-    }
+    } catch (e) {}
   }
 }
