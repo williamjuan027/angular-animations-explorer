@@ -34,10 +34,10 @@ $angular-animations-explorer-theme: mat-light-theme(
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+* {
+  font-family: 'Open Sans', sans-serif;
 }
 
 // Markdown related styling
@@ -46,9 +46,14 @@ markdown {
   pre {
     background-color: #eeeef3;
     padding: 1rem;
+    code {
+      background-color: transparent;
+    }
   }
   code {
     white-space: pre-wrap;
+    font-family: monospace;
+    background-color: #eeeef3;
   }
   img {
     width: 90%;
