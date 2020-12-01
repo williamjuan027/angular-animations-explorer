@@ -1,0 +1,4 @@
+# Allow all URLs (see https://www.robotstxt.org/robotstxt.html)
+User-agent: *
+Disallow:
+Sitemap: https://williamjuan027.github.io/angular-animations-explorer/sitemap.xml
