@@ -27,7 +27,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/404.html",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
@@ -91,7 +92,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/404.html",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
