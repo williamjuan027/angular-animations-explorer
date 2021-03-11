@@ -14,5 +14,14 @@ export const integrationsRoutes: IContentRoutes = {
         'assets/post-content/integrations/nativescript/nativescript.content.md',
       pageType: EPageType.ContentOnly,
     },
+    {
+      title: 'Ionic',
+      description: 'Using Angular Animations in an Ionic Application.',
+      image: 'assets/post-content/integrations/ionic/hero.svg',
+      tags: ['tips'],
+      path: 'ioinic',
+      post: 'assets/post-content/integrations/ionic/ionic.content.md',
+      pageType: EPageType.ContentOnly,
+    },
   ],
 };

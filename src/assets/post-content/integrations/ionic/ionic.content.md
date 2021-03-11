@@ -1,4 +1,4 @@
-If you are using Nativescript Angular, you have the ability to use Angular's animation system in your app. This should be identical to the one you would use in a regular angular web project. Angular's animation system is built on CSS functionality, which means that you can only animate properties that you could animate using CSS. This method doesn't introduce new animatable properties, it is just a different way of implementing your animations.
+If you are using Ionic Angular, you have the ability to use Angular's animation system in your app. This should be identical to the one you would use in a regular angular web project. Angular's animation system is built on CSS functionality, which means that you can only animate properties that you could animate using CSS. This method doesn't introduce new animatable properties, it is just a different way of implementing your animations.
 
 ## Setup
 
@@ -8,16 +8,16 @@ We will need the `@angular/animation` dependency in order to create these animat
 npm install @angular/animation --save
 ```
 
-We will also need to import `NativeScriptAnimationsModule` in our `app.module.ts` to make it available throughout the app.
+We will then need to import `BrowserAnimationsModule` in our `app.module.ts` to make it available throughout the app.
 
 ```ts
 // app.module.ts
-import { NativeScriptAnimationsModule } from "@nativescript/angular";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 ...
 imports: [
   ...
-  NativeScriptAnimationsModule
+  BrowserAnimationsModule
 ]
 ```
 
@@ -36,7 +36,7 @@ import {
 } from '@angular/animations';
 ```
 
-Inside our `@Component` decorator, we can pass in an additional property called animations which accepts an array of animations that we can then call from our template with a special syntax.
+Inside our `@Component` decorator, we can pass in an additional property called animations which accepts an array of animations that we can then call from our template with a special syntax. This is identical to what you would do for a regular Angular project.
 
 For the purpose of this section, lets add a simple enter and exit fade and slide up animation to our element. We will need to create a trigger which will contain 2 transitions - one for entering and one for leaving.
 
