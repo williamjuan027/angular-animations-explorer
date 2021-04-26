@@ -1,4 +1,4 @@
-This example uses [Popmotion](https://popmotion.io) to animate the Card instead of **Angular Animations**.
+This example uses [Popmotion](https://popmotion.io) to animate the Card's state change.
 
 ```ts
 import { Directive, ElementRef, Input, NgZone, OnChanges } from '@angular/core';
