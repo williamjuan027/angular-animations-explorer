@@ -3,7 +3,7 @@
     [text]="isEnabled ? 'disable' : 'enable'"
     (click)="toggleIsEnabled()"
   ></app-button-basic>
-  <div class="card" [@enabledStateChange]="isEnabled ? 'default' : 'disabled'">
+  <div class="card" [appStateChangePop]="isEnabled">
     <app-card-demo-sample [hoverEnabled]="isEnabled"></app-card-demo-sample>
   </div>
 </div>
