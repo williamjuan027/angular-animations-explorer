@@ -76,7 +76,7 @@ transition(':enter', [
 
 We can now use the animation we wrote in the previous section by adding `@` to the element that we want.
 
-```html
+```markup
 <!-- .component.html -->
 <label @fadeAndSlide *ngIf="showLabel"></label>
 ```

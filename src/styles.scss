@@ -46,10 +46,11 @@ markdown {
   font-size: 1.1em;
   line-height: 1.6;
   pre {
-    border-radius: 10px;
-    background-color: #f2f8ff;
+    border-radius: 10px !important;
+    background-color: #f2f8ff !important;
     padding: 1rem;
-    box-shadow: 0px 0px 10px -5px #65adf1;
+    box-shadow: 0px 0px 10px -5px #65adf1 !important;
+    margin: 1rem 0 !important;
     code {
       background-color: transparent;
     }

@@ -4,13 +4,13 @@ Route animations refers to the animations that are applied to view transitions d
 
 To demonstrate this, we will first need to wrap the `router-outlet` inside a `div` which will contain the trigger for the animation. Then add an attribute directive in the `router-outlet` that contains data about active routes and their states which is then used to assign an animation state value to the animation trigger based on the route configuration.
 
-```html
+```markup
 <div @routeAnimations>
   <router-outlet></router-outlet>
 </div>
 ```
 
-```html
+```markup
 <div [@routeAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

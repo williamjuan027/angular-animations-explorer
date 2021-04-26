@@ -45,7 +45,7 @@ You could also respond to keyboard events such as specific key presses by replac
 
 Now that we have the directive build out, we can use it by adding it's selector to the element in our template like this:
 
-```html
+```markup
 <div appFadeMouseDown>
   ...
 </div>

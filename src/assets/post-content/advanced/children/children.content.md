@@ -4,7 +4,7 @@ One of the common use case for this is when you have an `*ngIf` attached to the 
 
 Let’s say we have a simple container with 2 children, each with its own set of animations (different triggers) with the following structure.
 
-```html
+```markup
 <div *ngIf="”isDisplayed”" @container>
   <div @enterExitLeft></div>
   <div @enterExitRight></div>

@@ -1,6 +1,6 @@
 This is basically the same as the class based animation with the exception that the animation code itself is written in the template instead of as part of a class in the css file. This is particularly useful if you have some parts of the animation code that needs to be dynamic in a way where a certain transformation value needs to be calculated based on some predetermined external factor. An example of this would be if we want to add a `scale` with a different value depending on the element's index. We can do this by binding the transform with a function which returns a string which contains the calculated value.
 
-```html
+```markup
 <div
   [style.transition]="'0.5s'"
   [style.transform]="isScaledDown ? getScaleDown(index) : getResetScale()"

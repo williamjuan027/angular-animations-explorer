@@ -26,7 +26,7 @@ The next two sets of snippets are how you would use the animation above in a htm
 
 **html and js**
 
-```html
+```markup
 <div id="targetElement"></div>
 ```
 
@@ -38,7 +38,7 @@ document
 
 **In an angular application**
 
-```html
+```markup
 <div #targeElement></div>
 ```
 

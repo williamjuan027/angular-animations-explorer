@@ -4,7 +4,7 @@ Animations can run both in sequence and in parallel using the functions `sequenc
 
 To demonstrate the various animation sequences, let’s start with defining the template which contains the parent element that we will target in our animations along with a few children elements. This is commonly used in lists or grid-like components containing multiple same or similar children elements. For simplicity, we will animate the children elements entering the view, adding a fade in and grow effect using the 3 sequences.
 
-```html
+```markup
 <ul @fadeInGrow>
   <li>First Element</li>
   <li>Second Element</li>
