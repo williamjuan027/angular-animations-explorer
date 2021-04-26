@@ -29,21 +29,6 @@ export const basicRoutes: IContentRoutes = {
       pageType: EPageType.ContentWithDemo,
     },
     {
-      title: 'State Change (Popmotion)',
-      description:
-        'Add custom animations to transitions between different states of an element using Popmotion instead of Angular Animations.',
-      image: 'assets/post-content/basic/state-change/hero.svg',
-      tags: ['basic', 'popmotion'],
-      path: 'state-change-popmotion',
-      loadChildren: () =>
-        import(
-          './state-change-popmotion/state-change-popmotion.demo.module'
-        ).then((m) => m.StateChangePopmotionDemoModule),
-      post:
-        'assets/post-content/basic/state-change-popmotion/state-change-popmotion.content.md',
-      pageType: EPageType.ContentWithDemo,
-    },
-    {
       title: 'Enter Exit',
       description:
         'Custom animations for elements entering and leaving the view.',

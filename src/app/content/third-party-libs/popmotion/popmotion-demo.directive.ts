@@ -29,7 +29,7 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
         },
       });
       animate({
-        to: ['scale(1)', 'scale(1.05)', 'scale(1)'],
+        to: ['scale(1, 1)', 'scale(1.1, 0.8)', 'scale(1, 1)'],
         type: 'spring',
         duration: 300,
         onUpdate: (latest) => {
