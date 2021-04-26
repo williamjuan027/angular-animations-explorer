@@ -7,7 +7,7 @@ export const integrationsRoutes: IContentRoutes = {
     {
       title: 'Nativescript',
       description: 'Using Angular Animations in a Nativescript Application.',
-      image: 'assets/post-content/integrations/nativescript/hero.svg',
+      image: 'assets/post-content/integrations/nativescript/hero.png',
       tags: ['tips'],
       path: 'nativescript',
       post:
@@ -17,7 +17,7 @@ export const integrationsRoutes: IContentRoutes = {
     {
       title: 'Ionic',
       description: 'Using Angular Animations in an Ionic Application.',
-      image: 'assets/post-content/integrations/ionic/hero.svg',
+      image: 'assets/post-content/integrations/ionic/hero.png',
       tags: ['tips'],
       path: 'ioinic',
       post: 'assets/post-content/integrations/ionic/ionic.content.md',
