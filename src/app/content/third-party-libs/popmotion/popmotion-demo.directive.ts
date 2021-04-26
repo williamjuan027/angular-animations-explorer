@@ -28,14 +28,38 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
           this.styler.set('opacity', latest);
         },
       });
+
+      // the bouncy part doesn't work when you pass in an array for "to" like
+      // to: ['scale(1,1)', 'scale(1.2,0.8)', 'scale(1,1)]
       animate({
-        to: ['scale(1, 1)', 'scale(1.1, 0.8)', 'scale(1, 1)'],
-        type: 'spring',
-        duration: 300,
+        from: 'scale(1,1)',
+        to: 'scale(1.2, 0.8)',
+        duration: 200,
         onUpdate: (latest) => {
           this.styler.set('transform', latest);
         },
+        onComplete: () => {
+          animate({
+            from: 'scale(1.2,0.8)',
+            to: 'scale(1, 1)',
+            type: 'spring',
+            stiffness: 700,
+            onUpdate: (latest) => {
+              this.styler.set('transform', latest);
+            },
+          });
+        },
       });
+
+      // translating
+      // animate({
+      //   from: 'translateX(-200px)',
+      //   to: 'translateX(0px)',
+      //   type: 'spring',
+      //   onUpdate: (latest) => {
+      //     this.styler.set('transform', latest);
+      //   },
+      // });
     });
   }
 }
