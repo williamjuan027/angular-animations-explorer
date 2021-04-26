@@ -45,6 +45,6 @@ _`style`, `transition`, and `animate` accept both grouped (as an array) and sing
 
 In your template, all you need to do is add the animation name defined previously, prefixed with `@` and bind it to a variable that will toggle between the states and Angular handles the rest.
 
-```html
+```markup
 <div [@enabledStateChange]="stateOfElement">...</div>
 ```

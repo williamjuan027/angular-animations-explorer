@@ -44,7 +44,7 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
 }
 ```
 
-```html
+```markup
 <div class="card" [appStateChangePop]="isEnabled">
   <!-- ... -->
 </div>

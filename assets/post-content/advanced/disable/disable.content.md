@@ -1,6 +1,6 @@
 Sometimes we want to disable an animation when a certain condition is met, for example, on low performing devices, certain browsers, when the user has the system setting set to minimize the amount of non-essential motion (`prefers-reduced-motion` media query), or maybe an internal setting within the application. Angular provides you with a `@.disabled` property that lets you do exactly this. This property lets you pass in an expression to conditionally disable and enable children animations, defaulting to `true` if no expression is passed in.
 
-```html
+```markup
 <div [@.disabled]="disableAnimationCondition">
   <div [@animate]="expression">Animate</div>
 </div>
