@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StateChangeDemoComponent } from './state-change.demo.component';
-import { ContainersModule } from '@shared/components/containers';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ButtonsModule } from '@shared/components/buttons';
+import { ContainersModule } from '@shared/components/containers';
+import { StateChangeDemoComponent } from './state-change.demo.component';
 
 @NgModule({
   declarations: [StateChangeDemoComponent],
