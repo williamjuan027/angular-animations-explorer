@@ -4,3 +4,14 @@ app-card {
     cursor: pointer;
   }
 }
+
+.config-container {
+  padding: 10px;
+  .config-name {
+  }
+  .config-slider {
+    mat-slider {
+      width: 300px;
+    }
+  }
+}

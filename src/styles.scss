@@ -40,6 +40,18 @@ body {
   font-family: 'Poppins', 'Open Sans', sans-serif;
 }
 
+.dim {
+  opacity: 0.7;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 // Markdown related styling
 markdown {
   display: block;
@@ -78,4 +90,13 @@ markdown {
   a {
     color: #65adf1;
   }
+}
+
+// Material overrides
+.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  background-color: #65adf1;
+}
+.mat-accent .mat-slider-thumb {
+  background-color: #65adf1;
+  border: solid 1px #f2f8ff;
 }
