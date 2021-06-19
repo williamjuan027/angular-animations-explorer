@@ -19,5 +19,18 @@ export const thirdPartyLibsRoutes: IContentRoutes = {
         'assets/post-content/third-party-libs/popmotion/popmotion.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Three',
+      description:
+        'Add custom animations to transitions between different states of an element using Popmotion.',
+      image: 'assets/post-content/third-party-libs/popmotion/hero.png',
+      tags: ['third party libs', 'three'],
+      path: 'three',
+      loadChildren: () =>
+        import('./three/three.demo.module').then((m) => m.ThreeDemoModule),
+      post:
+        'assets/post-content/third-party-libs/popmotion/popmotion.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
