@@ -19,5 +19,19 @@ export const thirdPartyLibsRoutes: IContentRoutes = {
         'assets/post-content/third-party-libs/popmotion/popmotion.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'GreenSock',
+      description: 'Create animation timelines using GreenSock',
+      image: 'assets/post-content/third-party-libs/greensock/hero.svg',
+      tags: ['third party libs', 'greensock'],
+      path: 'greensock',
+      loadChildren: () =>
+        import('./greensock/greensock.demo.module').then(
+          (m) => m.GreensockDemoModule
+        ),
+      post:
+        'assets/post-content/third-party-libs/greensock/greensock.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
