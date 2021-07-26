@@ -15,7 +15,7 @@ Check out the site here: http://williamjuan027.github.io/angular-animations-expl
 
 _This is not meant to be as comprehensive or a replacement for documentation, but rather a quick way to showcase the different animation methods that are available, look at their behavior and some use cases, and the code behind the implementation._
 
-If you like my work, feel free to tweet about it or star this repository.
+If you like this project, hit that star button or share it on [twitter](https://twitter.com/intent/tweet?text=Explore%20the%20different%20ways%20to%20animate%20your%20Angular%20Apps%20by%20%40williamjuan27%20%23angular%20%23javascript%20%23webdev%0Ahttps%3A%2F%2Fwilliamjuan027.github.io%2Fangular-animations-explorer) so more people can find it 😀
 
 **Enjoy :)**
 
@@ -38,6 +38,10 @@ There are 2 main folders that contains the bulk of the content in the applicatio
 
 - **Content**: All the content you see on the application are written in markdown located in [`src/assets/post-content/`](src/assets/post-content) in their respective folders.
 - **Demo**: For posts that contains a demo component, these components are located in [`src/app/content/`](src/app/content/) as separate modules in their respective folders.
+
+## Have any questions or want to see an animation in Angular not included in this resource?
+
+Tweet me at [@williamjuan27](https://twitter.com/Williamjuan27) or open an issue in this repo.
 
 ## Attributions
 
