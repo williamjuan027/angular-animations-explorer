@@ -24,7 +24,7 @@ export class AnimateStyleDemoComponent implements AfterViewInit {
   cardIsDisplayed = true;
   isAnimating = false;
 
-  private viewRef: EmbeddedViewRef<NgIfContext<any>> | null = null;
+  private viewRef: EmbeddedViewRef<any> | null = null;
 
   constructor(private renderer: Renderer2) {}
 
