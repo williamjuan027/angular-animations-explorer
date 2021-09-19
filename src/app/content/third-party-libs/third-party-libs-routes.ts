@@ -34,12 +34,12 @@ export const thirdPartyLibsRoutes: IContentRoutes = {
       pageType: EPageType.ContentWithDemo,
     },
     {
-      title: 'Animate.style (animate.css)',
+      title: 'Animate.css',
       description:
         'Use predefined animations from Animate.style to animate your application',
       image: 'assets/post-content/third-party-libs/animate-style/hero.png',
-      tags: ['third party libs', 'animate style'],
-      path: 'animate-style',
+      tags: ['third party libs', 'animate.css'],
+      path: 'animate-css',
       loadChildren: () =>
         import('./animate-style/animate-style.demo.module').then(
           (m) => m.AnimateStyleDemoModule

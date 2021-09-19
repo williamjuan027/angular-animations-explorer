@@ -1,11 +1,11 @@
-This example uses [Animate.style](https://animate.style/) to animate the elements.
+This example uses [Animate.css](https://animate.style/) to animate the elements.
 
-Add animate.style's dependency either through the CDN or via npm. I used the CDN for this demo. Add the following code to your `index.html`
+Add Animate.css's dependency either through the CDN or via npm. I used the CDN for this demo. Add the following code to your `index.html`
 
 ```html
 <head>
   ...
-  <!-- animate.style -->
+  <!-- animate.css -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -27,7 +27,7 @@ If you want to trigger an animation once when a state change occurs, you can bin
 
 However, that approach doesn't work if you want to create an animation that can be triggered multiple times. For example, clicking one of the animation buttons in the demo executes the animation. After the animation completes, you can run the animation again by clicking the button again.
 
-This is by design, as animate.style runs an animation by adding a class containing the animation, you wouldn't be able to retrigger the animation if the class is already added to the element. To work around this, we can use the `animationend` event to listen to when the animation is done executing, and remove the class that was added to trigger the animation. This allows us to add the classes again whenever we want to retrigger the animation.
+This is by design, as Animate.css runs an animation by adding a class containing the animation, you wouldn't be able to retrigger the animation if the class is already added to the element. To work around this, we can use the `animationend` event to listen to when the animation is done executing, and remove the class that was added to trigger the animation. This allows us to add the classes again whenever we want to retrigger the animation.
 
 ```typescript
 import { ViewChild, ElementRef } from '@angular/core';
@@ -55,7 +55,7 @@ export class AnimateStyleComponent {
         this.isAnimating = true;
 
         // listen to animationend to allow additional logic to be run
-        // after the animation from animate.style is done executing
+        // after the animation from animate.css is done executing
         this.cardContainer.nativeElement.addEventListener(
             'animationend',
             (event) => {
