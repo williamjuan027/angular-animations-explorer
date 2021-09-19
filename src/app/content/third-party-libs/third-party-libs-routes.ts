@@ -33,5 +33,20 @@ export const thirdPartyLibsRoutes: IContentRoutes = {
         'assets/post-content/third-party-libs/greensock/greensock.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Animate.style (animate.css)',
+      description:
+        'Use predefined animations from Animate.style to animate your application',
+      image: 'assets/post-content/third-party-libs/animate-style/hero.png',
+      tags: ['third party libs', 'animate style'],
+      path: 'animate-style',
+      loadChildren: () =>
+        import('./animate-style/animate-style.demo.module').then(
+          (m) => m.AnimateStyleDemoModule
+        ),
+      post:
+        'assets/post-content/third-party-libs/animate-style/animate-style.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };
