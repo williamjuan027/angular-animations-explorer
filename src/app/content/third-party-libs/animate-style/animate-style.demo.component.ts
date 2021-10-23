@@ -8,7 +8,6 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { NgIfContext } from '@angular/common';
 
 @Component({
   selector: 'app-animate-style-demo',

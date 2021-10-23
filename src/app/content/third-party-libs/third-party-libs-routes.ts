@@ -48,5 +48,20 @@ export const thirdPartyLibsRoutes: IContentRoutes = {
         'assets/post-content/third-party-libs/animate-style/animate-style.content.md',
       pageType: EPageType.ContentWithDemo,
     },
+    {
+      title: 'Motion One',
+      description:
+        'A new animation library, built on the Web Animations API for the smallest filesize and the fastest performance.',
+      image: 'assets/post-content/third-party-libs/motion-one/hero.png',
+      tags: ['third party libs', 'motion one'],
+      path: 'motion-one',
+      loadChildren: () =>
+        import('./motion-one/motion-one.demo.module').then(
+          (m) => m.MotionOneDemoModule
+        ),
+      post:
+        'assets/post-content/third-party-libs/motion-one/motion-one.content.md',
+      pageType: EPageType.ContentWithDemo,
+    },
   ],
 };

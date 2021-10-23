@@ -1,0 +1,20 @@
+<div>
+  <app-button-basic
+    text="default"
+    [disabled]="isAnimating"
+    (click)="animateDefaultCard()"
+  ></app-button-basic>
+  <app-button-basic
+    text="spring"
+    [disabled]="isAnimating"
+    (click)="animateSpringCard()"
+  ></app-button-basic>
+  <app-button-basic
+    text="sequence"
+    [disabled]="isAnimating"
+    (click)="animateSequenceCard()"
+  ></app-button-basic>
+  <div>
+    <div class="box" #box></div>
+  </div>
+</div>
