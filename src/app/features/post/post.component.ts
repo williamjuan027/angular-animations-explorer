@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Content, ContentLoaderService, EPageType } from '@app/core';
 import { ClipboardButtonComponent, SingleColumnComponent, TwoColumnComponent } from '@app/shared';
 import { MarkdownModule } from 'ngx-markdown';
@@ -27,7 +27,7 @@ export class PostComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    // private navigationService: NavigationService,
+    private router: Router,
     private contentLoaderService: ContentLoaderService
   ) {}
 
@@ -56,6 +56,8 @@ export class PostComponent implements OnInit {
       if (this.postInfo != null) {
         // load markdown
         this.mdPost = this.postInfo.post;
+      } else {
+        this.router.navigate(['']);
       }
 
       if (this.demoVcRef) {
