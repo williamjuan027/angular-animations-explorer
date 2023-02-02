@@ -1,0 +1,16 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <div #container></div>
+    <ng-template #template>
+      <!-- set opacity to 0 to prevent flashing before enter animation starts -->
+      <div #cardContainer [style.opacity]="0">
+        <div class="demo-card"></div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="toggleCard()" [disabled]="isAnimating">{{ cardIsDisplayed ? 'Hide' : 'Show' }}</button>
+    <button class="demo-button" (click)="bounceCard()" [disabled]="!cardIsDisplayed || isAnimating">Bounce</button>
+    <button class="demo-button" (click)="wobbleCard()" [disabled]="!cardIsDisplayed || isAnimating">Wobble</button>
+  </div>
+</div>

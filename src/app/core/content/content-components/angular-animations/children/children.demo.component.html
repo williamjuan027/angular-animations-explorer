@@ -1,0 +1,11 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <div class="flex flex-col gap-2" *ngIf="isDisplayed" @container>
+      <div @enterExitLeft class="demo-card"></div>
+      <div @enterExitRight class="demo-card"></div>
+    </div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="toggleIsDisplayed()">{{ isDisplayed ? 'Hide' : 'Show' }}</button>
+  </div>
+</div>

@@ -14,7 +14,7 @@ npm install --save motion
 
 To animate an element from your template, you will need to give it an id so you can access them from your typescript file.
 
-```html
+```html lineNumbers
 <div #myElement>
   ...
 </div>

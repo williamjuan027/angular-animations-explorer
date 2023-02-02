@@ -1,0 +1,12 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+      <div
+        [@enabledStateChange]="isEnabled ? 'enabled' : 'disabled'"
+        class="demo-card"
+        [class.cursor-pointer]="isEnabled"
+        [class.cursor-not-allowed]="!isEnabled"></div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="toggleIsEnabled()">{{ isEnabled ? 'Disable' : 'Enable' }}</button>
+  </div>
+</div>

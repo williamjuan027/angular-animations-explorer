@@ -1,0 +1,16 @@
+<div class="animation-demo-container">
+  <div class="card-container flex flex-row gap-3">
+    <ng-container *ngFor="let item of [0, 1, 2]; let i = index">
+      <div
+        class="card"
+        [style.transform]="isScaledDown ? getScaleDown(i) : getResetScale()"
+        [style.transition]="'0.5s'"
+      >
+        <div class="demo-card"></div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="toggleScale()">{{ isScaledDown ? 'Zoom in' : 'Zoom out' }}</button>
+  </div>
+</div>

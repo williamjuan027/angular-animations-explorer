@@ -1,0 +1,10 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <div #box class="demo-card"></div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="animateDefaultCard()" [disabled]="isAnimating">Default</button>
+    <button class="demo-button" (click)="animateSpringCard()" [disabled]="isAnimating">Spring</button>
+    <button class="demo-button" (click)="animateSequenceCard()" [disabled]="isAnimating">Sequence</button>
+  </div>
+</div>

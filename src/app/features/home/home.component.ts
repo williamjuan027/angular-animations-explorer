@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationService } from '@core/services';
-import { CardQuicklinkConfig } from '@shared/components/containers/card-quicklink';
-import { contentRoutes } from '@content/content-routes';
+import { Component } from '@angular/core';
+import { SingleColumnComponent } from '@app/shared';
+import { MarkdownModule } from 'ngx-markdown';
+import { AdditionalResources, BasicContent, TipsContent, ThirdPartyLibsContent, AngularAnimationsContent } from '@app/core';
+import { ContentCardComponent } from './content-card/content-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, SingleColumnComponent, MarkdownModule, ContentCardComponent],
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  contents = contentRoutes;
-  constructor(private navigationService: NavigationService) {}
 
-  navigateToPost(category: string, post: string): void {
-    this.navigationService.navigateToPost(category, post);
-  }
+  basicContent = BasicContent;
+  angularAnimationsContent = AngularAnimationsContent;
+  thirdPartyLibsContent = ThirdPartyLibsContent;
+  tipsContent = TipsContent;
+  additionalResources = AdditionalResources;
 }

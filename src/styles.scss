@@ -1,116 +1,93 @@
-@use '~@angular/material' as mat;
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-animations-explorer-primary: mat.define-palette(mat.$indigo-palette);
-$angular-animations-explorer-accent: mat.define-palette(
-  mat.$pink-palette,
-  A200,
-  A100,
-  A400
-);
-
-// The warn palette is optional (defaults to red).
-$angular-animations-explorer-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$angular-animations-explorer-theme: mat.define-light-theme(
-  $angular-animations-explorer-primary,
-  $angular-animations-explorer-accent,
-  $angular-animations-explorer-warn
-);
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($angular-animations-explorer-theme);
-
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-* {
-  font-family: 'Poppins', 'Open Sans', sans-serif;
-}
-
-.dim {
-  opacity: 0.7;
-}
-
-.medium {
-  font-weight: 500;
-}
-
-.bold {
-  font-weight: 600;
+html {
+    @apply bg-slate-900;
 }
 
 // Markdown related styling
 markdown {
-  display: block;
-  font-size: 1.1em;
-  line-height: 1.6;
-  pre {
-    border-radius: 10px !important;
-    background-color: #f2f8ff !important;
-    padding: 1rem;
-    box-shadow: 0px 0px 10px -5px #65adf1 !important;
-    margin: 1rem 0 !important;
-    code {
-      background-color: transparent;
-    }
-  }
-  code {
-    border-radius: 10px;
-    white-space: pre-wrap;
-    font-family: monospace;
-    background-color: #f2f8ff;
-  }
-  img {
-    width: 90%;
-    margin: 0 auto;
     display: block;
-  }
-  h3 {
-    font-weight: bold !important;
-  }
-  h5 {
-    // workaround: this is used for styling image descriptions
-    text-align: center;
-    font-style: italic !important;
-    margin-top: -10px !important;
-  }
-  a {
-    color: #65adf1;
-  }
-  blockquote {
-    margin: 15px 0;
-    border-left: 5px solid #65adf1;
-    padding: 5px 15px;
-    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.6;
+    @apply text-gray-400;
+    pre {
+      font-size: 0.8rem !important;
+      border-radius: 8px !important;
+      border: 1px solid rgb(55 65 81);
+      background-color: rgb(30 41 59) !important;
+      margin: 1rem 0 !important;
+      z-index: -1;
+      code {
+        @apply p-0;
+        background-color: transparent;
+      }
+    }
+    code {
+      @apply bg-slate-800 text-cyan-600 px-2 py-1 rounded;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+    img {
+      width: 80%;
+      margin: 2em auto;
+      display: block;
+      @apply rounded max-w-2xl;
+    }
     p {
-      margin-bottom: 0 !important;
+      @apply mb-5 leading-relaxed;
+    }
+    h1 {
+      @apply text-3xl font-medium text-cyan-300;
+    }
+    h2 {
+      @apply text-gray-100 font-medium text-xl mt-8;
+    }
+    h3 {
+      font-weight: bold !important;
+    }
+    h5 {
+      // workaround: this is used for styling image descriptions
+      text-align: center;
+      font-style: italic !important;
+      margin-top: -2em !important;
+      margin-bottom: 2em;
+      @apply text-sm;
+    }
+    a {
+      @apply text-cyan-300 hover:underline transition duration-300 hover:text-cyan-500;
+    }
+    blockquote {
+      @apply border border-cyan-900 bg-slate-800 rounded-lg px-5 py-7 text-gray-300;
+
+      margin: 15px 0;
+      // border-left: 5px solid #65adf1;
+      // padding: 5px 15px;
+      font-style: italic;
+      p {
+        margin-bottom: 0 !important;
+      }
     }
   }
-}
+  
 
-// Material overrides
-.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
-  background-color: #65adf1;
-}
-.mat-accent .mat-slider-thumb {
-  background-color: #65adf1;
-  border: solid 1px #f2f8ff;
-}
+  // demo styles
+  .animation-demo-container {
+    @apply rounded-lg border border-cyan-700 bg-slate-800 flex flex-col;
+    height: 350px;
+    overflow: auto;
+    .card-container {
+      @apply grow p-5;
+      .demo-card {
+        @apply w-40 h-40 rounded-lg border bg-sky-300;
+      }
+    }
+    .demo-controller-container {
+      @apply flex flex-row gap-3 px-5 py-4 bg-cyan-700 rounded-b-lg z-10;
+        .demo-button {
+          @apply font-medium bg-white text-slate-900 rounded px-3 py-2 transition hover:opacity-80 hover:scale-105 duration-200;
+        }
+    }
+  }

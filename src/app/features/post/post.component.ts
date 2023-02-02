@@ -1,37 +1,42 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ContentLoaderService } from '@content/content-loader.service';
-import { NavigationService } from '@core/services';
-import {
-  EPageType,
-  IContentCategoryRoutes,
-} from '@content/content-routes.interface';
+import { Content, ContentLoaderService, EPageType } from '@app/core';
+import { ClipboardButtonComponent, SingleColumnComponent, TwoColumnComponent } from '@app/shared';
+import { MarkdownModule } from 'ngx-markdown';
+import { DemoContentDirective } from './directives/demo-content.directive';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MarkdownModule, SingleColumnComponent, TwoColumnComponent, ClipboardButtonComponent, DemoContentDirective],
+  providers: [ContentLoaderService],
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
   ePageType = EPageType; // determine which layout to use on template
-  mdPost: string; // path to md file
-  postInfo: IContentCategoryRoutes;
+  mdPost: string | undefined = undefined; // path to md file
+  postInfo: Content | undefined = undefined;
+  clipboardButtonComponent = ClipboardButtonComponent
 
   private routeInfo: {
     category: string;
     postName: string;
-  };
-  private demoVcRef: ViewContainerRef;
+  } | undefined = undefined;
+  private demoVcRef: ViewContainerRef | undefined = undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private navigationService: NavigationService,
+    // private navigationService: NavigationService,
     private contentLoaderService: ContentLoaderService
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      this.setupPage(params.get('category'), params.get('postName'));
+      const category = params.get('category');
+      const postName = params.get('postName');
+      if (category != null && postName != null)
+      this.setupPage(category, postName);
     });
   }
 
@@ -48,8 +53,10 @@ export class PostComponent implements OnInit {
     try {
       this.postInfo = this.contentLoaderService.getPostInfo(category, postName);
 
-      // load markdown
-      this.mdPost = this.postInfo.post;
+      if (this.postInfo != null) {
+        // load markdown
+        this.mdPost = this.postInfo.post;
+      }
 
       if (this.demoVcRef) {
         // if navigating to a different route with the same component,
@@ -57,16 +64,17 @@ export class PostComponent implements OnInit {
         this.loadDemoComponent(this.demoVcRef);
       }
     } catch (e) {
-      this.navigationService.navigateToHome();
+      // this.navigationService.navigateToHome();
       return;
     }
   }
 
   private loadDemoComponent(vcRef: ViewContainerRef): void {
-    this.contentLoaderService.load(
-      this.routeInfo.category,
-      this.routeInfo.postName,
-      vcRef
-    );
+    if (this.postInfo != null) {
+      this.contentLoaderService.loadDemoComponent(
+        this.postInfo,
+        vcRef
+      );
+    }
   }
 }

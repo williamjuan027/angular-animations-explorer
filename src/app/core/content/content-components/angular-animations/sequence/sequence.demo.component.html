@@ -1,0 +1,38 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <ng-container *ngIf="sequenceSelected">
+    <ng-container [ngSwitch]="sequenceSelected">
+      <div
+        *ngSwitchCase="'SEQUENCE'"
+        @fadeGrowSequence
+        (@fadeGrowSequence.done)="animationDone()"
+      >
+        <div *ngIf="true" class="demo-card"></div>
+      </div>
+      <div
+        *ngSwitchCase="'GROUP'"
+        @fadeGrowGroup
+        (@fadeGrowGroup.done)="animationDone()"
+      >
+      <div *ngIf="true" class="demo-card"></div>
+      </div>
+      <div
+        *ngSwitchCase="'STAGGER'"
+        @fadeGrowStagger
+        (@fadeGrowStagger.done)="animationDone()"
+        class="flex flex-row gap-2 overflow-auto"
+      >
+        <div *ngIf="true" class="demo-card shrink-0"></div>
+        <div *ngIf="true" class="demo-card shrink-0"></div>
+        <div *ngIf="true" class="demo-card shrink-0"></div>
+      </div>
+      <div *ngSwitchDefault></div>
+    </ng-container>
+  </ng-container>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="selectSequence('SEQUENCE')">Sequence</button>
+    <button class="demo-button" (click)="selectSequence('GROUP')">Group</button>
+    <button class="demo-button" (click)="selectSequence('STAGGER')">Stagger</button>
+  </div>
+</div>

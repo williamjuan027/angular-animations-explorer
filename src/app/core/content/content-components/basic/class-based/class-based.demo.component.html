@@ -1,0 +1,18 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <div
+      class="card"
+      [class.card-reset]="!animationType"
+      [class.card-keyframe]="animationType === 'KEYFRAME'"
+      [class.card-transform]="animationType === 'TRANSFORM'"
+      (animationend)="resetAnimation()"
+      (transitionend)="resetAnimation()"
+    >
+      <div class="demo-card"></div>
+    </div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="selectTransformAnimation()">Transform</button>
+    <button class="demo-button" (click)="selectKeyframeAnimation()">Keyframes</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+    <div class="flex flex-row gap-2 overflow-auto" [@queryShake]="animation" (@queryShake.done)="animationDone()">
+      <ng-container *ngFor="let item of [0, 1, 2]">
+        <div class="demo-card shrink-0"></div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="animate()" [disabled]="animation">Default</button>
+    <button class="demo-button" (click)="animateWithLimit()" [disabled]="animation">Limit (2)</button>
+  </div>
+</div>

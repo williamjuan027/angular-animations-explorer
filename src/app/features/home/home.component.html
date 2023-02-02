@@ -1,30 +1,96 @@
 <app-single-column>
-  <div class="home-container">
-    <!-- Intro blurb -->
-    <div class="markdown-container">
-      <h2>Hi there 👋</h2>
-      <markdown src="assets/post-content/misc/intro/intro.content.md">
-      </markdown>
+  <div class="flex flex-col">
+    <!-- hero -->
+    <div class="flex flex-col items-center">
+      <!-- main hero text -->
+      <div class="md:p-14 max-w-5xl">
+        <h1 class="text-6xl font-semibold text-center text-transparent bg-gradient-to-r from-white via-cyan-300 via-cyan-600 to-white bg-clip-text leading-none py-3">Your complete guide to Animations in Angular</h1>
+        <p class="text-lg text-gray-400 text-center leading-loose mt-4">Learn the different ways you can add animations to your Angular application - including CSS Animations, Angular Animations, GSAP, Tailwind, and many more...</p>
+      </div>
+
+      <!-- buttons container -->
+      <div class="flex flex-row items-center justify-center gap-5 mt-10 md:mt-0">
+          <a  href="/#explore" class="text-center rounded-lg text-slate-900 bg-cyan-300 font-medium px-5 py-3 transition hover:scale-105 hover:opacity-80 duration-300">Explore Animations</a>
+          <a  href="https://github.com/williamjuan027/angular-animations-explorer" class="text-center rounded-lg text-white bg-slate-800 font-medium px-5 py-3 transition hover:scale-105 hover:opacity-80 duration-300">View on Github</a>
+      </div>
     </div>
-    <div class="cards-container">
-      <ng-container *ngFor="let category of contents">
-        <h2>{{ category.name }}</h2>
-        <div fxLayout="row wrap">
-          <ng-container *ngFor="let post of category.routes">
-            <div
-              fxFlex.lt-sm="100"
-              fxFlex.lt-md="50"
-              fxFlex="33%"
-              class="card-container"
-            >
-              <app-card-quicklink
-                [config]="post"
-                (click)="navigateToPost(category.path, post.path)"
-              ></app-card-quicklink>
-            </div>
-          </ng-container>
-        </div>
-      </ng-container>
+
+    <!-- about the project -->
+    <div class="flex flex-col mt-20">
+      <h2 class="font-medium text-4xl text-cyan-300">About the Project</h2>
+      <!-- <p class="text-lg text-gray-400 mt-2">Didn't find what you are looking for? Below are a few more resources surrounding animations and Angular</p> -->
+      <div class="mt-5">
+        <markdown src="assets/post-content/misc/intro/intro.content.md">
+        </markdown>
+      </div>
     </div>
+
+    <!-- basic animatinos -->
+    <div class="flex flex-col mt-20" id="explore">
+      <span class="font-medium text-lg text-cyan-300">{{ basicContent.title }}</span>
+      <h2 class="mt-2 font-medium text-4xl text-white">{{ basicContent.tagLine }}</h2>
+      <p class="mt-4 text-lg text-gray-400">{{ basicContent.description }}</p>
+
+      <div class="flex flex-col lg:flex-row gap-3 mt-5">
+        <ng-container *ngFor="let content of basicContent.content | keyvalue">
+          <app-content-card [content]="content.value"></app-content-card> 
+        </ng-container>
+      </div>
+    </div>
+
+     <!-- angular animations -->
+     <div class="flex flex-col mt-16">
+      <span class="font-medium text-lg text-cyan-300">{{ angularAnimationsContent.title }}</span>
+      <h2 class="mt-2 font-medium text-4xl text-white">{{ angularAnimationsContent.tagLine }}</h2>
+      <p class="mt-4 text-lg text-gray-400">{{ angularAnimationsContent.description }}</p>
+
+      <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap gap-3 mt-5">
+        <ng-container *ngFor="let content of angularAnimationsContent.content | keyvalue">
+          <app-content-card [content]="content.value"></app-content-card> 
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- third party libs -->
+    <div class="flex flex-col mt-16">
+      <span class="font-medium text-lg text-cyan-300">{{ thirdPartyLibsContent.title }}</span>
+      <h2 class="mt-2 font-medium text-4xl text-white">{{ thirdPartyLibsContent.tagLine }}</h2>
+      <p class="mt-4 text-lg text-gray-400">{{ thirdPartyLibsContent.description }}</p>
+
+      <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap gap-3 mt-5">
+        <ng-container *ngFor="let content of thirdPartyLibsContent.content | keyvalue">
+          <app-content-card [content]="content.value"></app-content-card> 
+        </ng-container>
+      </div>
+    </div>
+
+     <!-- tips -->
+     <div class="flex flex-col mt-16">
+      <span class="font-medium text-lg text-cyan-300">{{ tipsContent.title }}</span>
+      <h2 class="mt-2 font-medium text-4xl text-white">{{ tipsContent.tagLine }}</h2>
+      <p class="mt-4 text-lg text-gray-400">{{ tipsContent.description }}</p>
+
+      <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap gap-3 mt-5">
+        <ng-container *ngFor="let content of tipsContent.content | keyvalue">
+          <app-content-card [content]="content.value"></app-content-card> 
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- more resources -->
+    <div class="flex flex-col mt-16">
+      <h2 class="font-medium text-4xl text-cyan-300">More Resources</h2>
+      <p class="text-lg text-gray-400 mt-2">Didn't find what you are looking for? Below are a few more resources surrounding animations and Angular</p>
+
+      <div class="flex flex-col gap-3 mt-4">
+        <ng-container *ngFor="let resource of additionalResources; let i = index">
+          <a [href]="resource.url" class="border-b-[.5px] broder-gray-700 py-6 flex flex-col group" [class.border-none]="i === additionalResources.length - 1">
+            <p class="text-xl font-medium text-white self-start transition-all border-b border-transparent group-hover:border-cyan-200 group-hover:text-cyan-200 duration-300">{{ resource.title }}</p>
+            <p class="text-lg text-gray-400 mt-3">{{ resource.description }}</p>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+
   </div>
 </app-single-column>

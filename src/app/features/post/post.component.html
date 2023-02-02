@@ -1,30 +1,40 @@
-<ng-container [ngSwitch]="postInfo?.pageType">
-  <app-single-column *ngSwitchCase="ePageType.ContentOnly">
-    <h1>{{ postInfo?.title }}</h1>
-    <ng-container *ngTemplateOutlet="markdown"></ng-container>
-  </app-single-column>
-
-  <ng-container *ngSwitchCase="ePageType.ContentWithDemo">
-    <h1>{{ postInfo?.title }}</h1>
-    <app-two-column>
-      <div left-section>
+<div class="max-w-7xl mx-auto py-10">
+  <ng-container [ngSwitch]="postInfo?.pageType">
+    <ng-container *ngSwitchCase="ePageType.ContentOnly">
+      <h1 class="text-3xl font-medium text-cyan-300 px-5">{{ postInfo?.title }}</h1>
+      <app-single-column>
         <ng-container *ngTemplateOutlet="markdown"></ng-container>
-      </div>
-      <div right-section>
-        <div class="demo-container">
-          <ng-template
-            appDemoContent
-            (componentLoaded)="onComponentLoaded($event)"
-          ></ng-template>
-        </div>
-      </div>
-    </app-two-column>
-  </ng-container>
-  <div *ngSwitchDefault></div>
-</ng-container>
+      </app-single-column>
+    </ng-container>
 
-<ng-template #markdown>
-  <div class="markdown-container">
-    <markdown [src]="mdPost"> </markdown>
-  </div>
-</ng-template>
+    <ng-container *ngSwitchCase="ePageType.ContentWithDemo">
+      <h1 class="text-3xl font-medium text-cyan-300 px-5">{{ postInfo?.title }}</h1>
+      <app-two-column>
+        <div left-section>
+          <ng-container *ngTemplateOutlet="markdown"></ng-container>
+        </div>
+        <div right-section>
+          <h1 class="text-2xl font-medium text-cyan-300">Demo</h1>
+          <p class="text-lg text-gray-400 mt-1">Click on the controllers below to see the animation in action.</p>
+          <div class="mt-5">
+            <ng-template
+              appDemoContent
+              (componentLoaded)="onComponentLoaded($event)"
+            ></ng-template>
+          </div>
+        </div>
+      </app-two-column>
+    </ng-container>
+    <div *ngSwitchDefault></div>
+  </ng-container>
+
+  <ng-template #markdown>
+    <div>
+      <!-- lineNumbers -->
+      <markdown
+        clipboard
+        [clipboardButtonComponent]="clipboardButtonComponent"
+        [src]="mdPost"> </markdown>
+    </div>
+  </ng-template>
+</div>

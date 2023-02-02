@@ -1,0 +1,12 @@
+<div class="animation-demo-container">
+  <div class="card-container" [@.disabled]="isDisabled">
+      <div
+        [@pulseAnimation]="isAnimating"
+        (@pulseAnimation.done)="animationDone()"
+        class="demo-card"></div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="playAnimation()" [disabled]="isAnimating">Play</button>
+    <button class="demo-button" (click)="toggleIsDisabled()" [disabled]="isAnimating">{{ isDisabled ? 'Enable' : 'Disable' }}</button>
+  </div>
+</div>

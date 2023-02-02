@@ -1,8 +1,8 @@
-<app-toolbar (menuClick)="onMenuClick()"></app-toolbar>
-<app-sidenav #sidenav>
-  <div main-content>
-    <div class="app-container" [@routeFadeAnimation]="prepareRoute(outlet)">
-      <router-outlet #outlet="outlet"></router-outlet>
-    </div>
+<div class="flex flex-col">
+  <div class="sticky top-0 z-20">
+    <app-toolbar>
+    </app-toolbar>
   </div>
-</app-sidenav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

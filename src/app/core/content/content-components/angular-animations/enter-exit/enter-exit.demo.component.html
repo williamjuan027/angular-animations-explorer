@@ -1,0 +1,8 @@
+<div class="animation-demo-container">
+  <div class="card-container">
+      <div *ngIf="cardIsDisplayed" @fadeSlideInOut class="demo-card"></div>
+  </div>
+  <div class="demo-controller-container">
+    <button class="demo-button" (click)="toggleCard()">{{ cardIsDisplayed ? 'Hide' : 'Show' }}</button>
+  </div>
+</div>
