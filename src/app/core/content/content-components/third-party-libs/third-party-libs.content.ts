@@ -13,18 +13,18 @@ export const ThirdPartyLibsContent: ContentGroup = {
       title: 'Pop Motion',
       description:
         'Add custom animations to transitions between different states of an element using Popmotion.',
-      path: '/post/third-party-libs/popmotion',
+      path: 'post/third-party-libs/popmotion',
       post:
-        '/assets/post-content/third-party-libs/popmotion/popmotion.content.md',
+        'assets/post-content/third-party-libs/popmotion/popmotion.content.md',
       pageType: EPageType.ContentWithDemo,
       demoComponent: PopmotionDemoComponent,
     },
     greensock: {
       title: 'GreenSock',
       description: 'Create animation timelines using GreenSock',
-      path: '/post/third-party-libs/greensock',
+      path: 'post/third-party-libs/greensock',
       post:
-        '/assets/post-content/third-party-libs/greensock/greensock.content.md',
+        'assets/post-content/third-party-libs/greensock/greensock.content.md',
       pageType: EPageType.ContentWithDemo,
       demoComponent: GreensockDemoComponent
     },
@@ -32,9 +32,9 @@ export const ThirdPartyLibsContent: ContentGroup = {
       title: 'Animate.style',
       description:
         'Use predefined animations from Animate.style to animate your application',
-      path: '/post/third-party-libs/animate-style',
+      path: 'post/third-party-libs/animate-style',
       post:
-        '/assets/post-content/third-party-libs/animate-style/animate-style.content.md',
+        'assets/post-content/third-party-libs/animate-style/animate-style.content.md',
       pageType: EPageType.ContentWithDemo,
       demoComponent: AnimateStyleDemoComponent
     },
@@ -42,9 +42,9 @@ export const ThirdPartyLibsContent: ContentGroup = {
       title: 'Motion One',
       description:
         'A new animation library, built on the Web Animations API for the smallest filesize and the fastest performance.',
-      path: '/post/third-party-libs/motion-one',
+      path: 'post/third-party-libs/motion-one',
       post:
-        '/assets/post-content/third-party-libs/motion-one/motion-one.content.md',
+        'assets/post-content/third-party-libs/motion-one/motion-one.content.md',
       pageType: EPageType.ContentWithDemo,
       demoComponent: MotionOneDemoComponent
     }

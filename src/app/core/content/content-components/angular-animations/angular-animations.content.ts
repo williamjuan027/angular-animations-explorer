@@ -16,16 +16,16 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Overview',
             description:
               'High level overview of Angular animations, how it works, and how to use them in your project.',
-            path: '/post/angular-animations/overview',
-            post: '/assets/post-content/basic/overview/overview.content.md',
+            path: 'post/angular-animations/overview',
+            post: 'assets/post-content/basic/overview/overview.content.md',
             pageType: EPageType.ContentOnly,
         },
         stateChange: {
             title: 'State Change',
             description:
                 'Add custom animations to transitions between different states of an element.',
-            path: '/post/angular-animations/state-change',
-            post: '/assets/post-content/basic/state-change/state-change.content.md',
+            path: 'post/angular-animations/state-change',
+            post: 'assets/post-content/basic/state-change/state-change.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: StateChangeDemoComponent
         },
@@ -33,8 +33,8 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Enter Exit',
             description:
               'Custom animations for elements entering and leaving the view.',
-            path: '/post/angular-animations/enter-exit',
-            post: '/assets/post-content/basic/enter-exit/enter-exit.content.md',
+            path: 'post/angular-animations/enter-exit',
+            post: 'assets/post-content/basic/enter-exit/enter-exit.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: EnterExitDemoComponent
         },
@@ -42,8 +42,8 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Sequence',
             description:
               'Control the timing and sequences of your animations using group, sequence, and stagger.',
-            path: '/post/angular-animations/sequence',
-            post: '/assets/post-content/advanced/sequence/sequence.content.md',
+            path: 'post/angular-animations/sequence',
+            post: 'assets/post-content/advanced/sequence/sequence.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: SequenceDemoComponent
           },
@@ -51,9 +51,9 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Multi-step Animation using Angular Keyframes',
             description:
               'Add multiple steps to your animation using keyframes with Angular animations.',
-            path: '/post/angular-animations/sequence-keyframe',
+            path: 'post/angular-animations/sequence-keyframe',
             post:
-              '/assets/post-content/advanced/sequence-keyframe/sequence-keyframe.content.md',
+              'assets/post-content/advanced/sequence-keyframe/sequence-keyframe.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: SequenceKeyframeDemoComponent
           },
@@ -61,16 +61,16 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Target Multiple Elements (Query)',
             description:
               'Apply the same animation to multiple different targets elements using the built in function query.',
-            path: '/post/angular-animations/query',
-            post: '/assets/post-content/advanced/query/query.content.md',
+            path: 'post/angular-animations/query',
+            post: 'assets/post-content/advanced/query/query.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: QueryDemoComponent
           },
           children: {
             title: 'Animate Children Elements',
             description: 'Control individual children animations from their parent.',
-            path: '/post/angular-animations/children',
-            post: '/assets/post-content/advanced/children/children.content.md',
+            path: 'post/angular-animations/children',
+            post: 'assets/post-content/advanced/children/children.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: ChildrenDemoComponent
           },
@@ -78,8 +78,8 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Disable Animation',
             description:
               'Conditionally disable animation for a single component or your entire application.',
-            path: '/post/angular-animations/disable',
-            post: '/assets/post-content/advanced/disable/disable.content.md',
+            path: 'post/angular-animations/disable',
+            post: 'assets/post-content/advanced/disable/disable.content.md',
             pageType: EPageType.ContentWithDemo,
             demoComponent: DisableDemoComponent
           },
@@ -87,8 +87,8 @@ export const AngularAnimationsContent: ContentGroup = {
             title: 'Route Animations',
             description:
               'Animate route changes by adding custom animations to your router outlet.',
-            path: '/post/angular-animations/route',
-            post: '/assets/post-content/advanced/route/route.content.md',
+            path: 'post/angular-animations/route',
+            post: 'assets/post-content/advanced/route/route.content.md',
             pageType: EPageType.ContentOnly,
           },
     }
