@@ -1,55 +1,38 @@
-<!-- <div>
-  <app-button-basic
-    [text]="isEnabled ? 'disable' : 'enable'"
-    (click)="toggleIsEnabled()"
-  ></app-button-basic>
-  <div class="card" [appStateChangePop]="isEnabled" [config]="popmotionConfig">
-    <app-card-demo-sample [hoverEnabled]="isEnabled"></app-card-demo-sample>
-  </div>
-
-  <div class="config-container">
-    <ng-container *ngFor="let config of defaultPopmotionConfig | keyvalue">
-      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
-        <div fxFlex="15" class="config-name">
-          <span>{{ config.key | titlecase }}:</span>
-        </div>
-        <div fxFlex class="config-slider">
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-            <mat-slider
-              fxFlex="90"
-              [min]="popmotionSliderSettings[config.key]?.min"
-              [max]="popmotionSliderSettings[config.key]?.max"
-              [step]="popmotionSliderSettings[config.key]?.step"
-              [value]="config.value"
-              (change)="popmotionConfig[config.key] = $event.value"
-            ></mat-slider>
-            <span
-              [class.medium]="
-                popmotionConfig[config.key] >
-                popmotionSliderSettings[config.key]?.min
-              "
-              [class.dim]="
-                popmotionConfig[config.key] ===
-                popmotionSliderSettings[config.key]?.min
-              "
-              fxFlex="10"
-              >{{ popmotionConfig[config.key] }}</span
-            >
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </div>
-</div> -->
-
 <div class="animation-demo-container">
   <div class="card-container">
-    <div #box class="demo-card"></div>
+    <div #box [appStateChangePop]="isAnimating" (animationComplete)="onAnimationComplete()" [config]="popmotionConfig" class="demo-card"></div>
   </div>
   <div class="demo-controller-container">
-    <!-- <button class="demo-button" (click)="animateDefaultCard()" [disabled]="isAnimating">Default</button>
-    <button class="demo-button" (click)="animateSpringCard()" [disabled]="isAnimating">Spring</button>
-    <button class="demo-button" (click)="animateSequenceCard()" [disabled]="isAnimating">Sequence</button> -->
+    <!-- WIP -->
+    <!-- <div class="flex flex-col gap-3 w-full">
+    <ng-container *ngFor="let config of defaultPopmotionConfig | keyvalue">
+      <div class="flex flex-col w-full">
+      <div class="flex flex-row gap-2">
+        <span class="text-gray-300">{{ config.key | titlecase }}:</span>
+        <ng-container *ngIf="popmotionConfig && config.key && popmotionSliderSettings">
+        <span class="text-gray-100 font-medium"  [class.opacity-100]="popmotionConfig[config.key] && popmotionSliderSettings?.[config.key]?.min && 
+        popmotionConfig[config.key] >
+        popmotionSliderSettings[config.key].min
+      "
+      [class.opacity-70]="popmotionConfig[config.key] && popmotionSliderSettings?.[config.key]?.min && 
+        popmotionConfig[config.key] ===
+        popmotionSliderSettings[config.key].min
+      ">{{ popmotionConfig[config.key] }}</span>
+    </ng-container>
+      </div>
+        <input
+            type="range"
+            [name]="config.key"
+            [min]="popmotionSliderSettings[config.key]?.min"
+            [max]="popmotionSliderSettings[config.key]?.max"
+            [step]="popmotionSliderSettings[config.key]?.step"
+            [value]="config.value"
+            (input)="onRangeUpdated(config.key, $event)"
+            class="w-full accent-sky-300">
+      </div>
+    </ng-container>
+    </div> -->
+    <button class="demo-button" (click)="playAnimation()" [disabled]="isAnimating">Play</button>
   </div>
 </div>
 

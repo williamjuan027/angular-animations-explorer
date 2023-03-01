@@ -76,7 +76,7 @@ markdown {
   // demo styles
   .animation-demo-container {
     @apply rounded-lg border border-cyan-700 bg-slate-800 flex flex-col;
-    height: 350px;
+    min-height: 350px;
     overflow: auto;
     .card-container {
       @apply grow p-5;

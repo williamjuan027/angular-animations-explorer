@@ -16,6 +16,8 @@ export const DefaultPopmotionConfig: IPopmotionConfig = {
   bounce: 0,
 };
 
+export type PopmotionSettings = 'stiffness' | 'damping' | 'mass' | 'velocity' | 'duration' | 'bounce';
+
 export const PopmotionSliderSettings = {
   stiffness: {
     min: 0,

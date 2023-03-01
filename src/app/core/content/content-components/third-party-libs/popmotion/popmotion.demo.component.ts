@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { StateChangePopmotionDemoDirective } from './popmotion-demo.directive';
 import {
   DefaultPopmotionConfig,
+  PopmotionSettings,
   PopmotionSliderSettings,
 } from './popmotion.model';
 
@@ -14,14 +15,23 @@ import {
   styleUrls: ['./popmotion.demo.component.scss'],
 })
 export class PopmotionDemoComponent {
-  isEnabled = true;
+  isAnimating = false;
 
   defaultPopmotionConfig = DefaultPopmotionConfig;
   popmotionSliderSettings = PopmotionSliderSettings;
 
   popmotionConfig = { ...this.defaultPopmotionConfig };
 
-  toggleIsEnabled(): void {
-    this.isEnabled = !this.isEnabled;
+  playAnimation(): void {
+    this.isAnimating = true;
+  }
+
+  onAnimationComplete(): void {
+    this.isAnimating = false
+  }
+
+  onRangeUpdated(configKey: PopmotionSettings, args: any): void {
+    const currentValue = args.target.value as number;
+    this.popmotionConfig[configKey] = currentValue;
   }
 }

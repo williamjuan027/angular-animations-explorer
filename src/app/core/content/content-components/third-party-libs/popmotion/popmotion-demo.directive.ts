@@ -1,9 +1,11 @@
 import {
   Directive,
   ElementRef,
+  EventEmitter,
   Input,
   NgZone,
   OnChanges,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { animate } from 'popmotion';
@@ -17,6 +19,7 @@ import { DefaultPopmotionConfig, IPopmotionConfig } from './popmotion.model';
 export class StateChangePopmotionDemoDirective implements OnChanges {
   @Input('appStateChangePop') state?: boolean;
   @Input() config: IPopmotionConfig = DefaultPopmotionConfig;
+  @Output() animationComplete = new EventEmitter<void>();
 
   private styler: Styler;
 
@@ -29,17 +32,7 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.ngZone.runOutsideAngular(() => {
-      if (changes['state']) {
-        animate({
-          from: Number(this.styler.get('opacity')),
-          to: this.state ? 1 : 0.5,
-          duration: 300,
-          type: 'spring',
-          onUpdate: (latest) => {
-            this.styler.set('opacity', latest);
-          },
-        });
-
+      if (changes['state'].currentValue === true) {
         animate({
           from: 'scale(1,1)',
           to: 'scale(1.2, 0.8)',
@@ -52,6 +45,8 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
               from: 'scale(1.2,0.8)',
               to: 'scale(1, 1)',
               type: 'spring',
+              duration: 300,
+              // WIP
               // stiffness: this.config.stiffness,
               // damping: this.config.damping,
               // duration: this.config.duration,
@@ -61,6 +56,11 @@ export class StateChangePopmotionDemoDirective implements OnChanges {
               onUpdate: (latest) => {
                 this.styler.set('transform', latest);
               },
+              onComplete: () => {
+                this.ngZone.run(() => {
+                  this.animationComplete.emit();
+                })
+              }
             });
           },
         });
