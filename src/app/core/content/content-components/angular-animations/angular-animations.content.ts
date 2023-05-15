@@ -6,6 +6,7 @@ import { SequenceKeyframeDemoComponent } from './sequence-keyframe/sequence-keyf
 import { QueryDemoComponent } from './query/query.demo.component';
 import { ChildrenDemoComponent } from './children/children.demo.component';
 import { DisableDemoComponent } from './disable/disable.demo.component';
+import { ProgrammaticDemoComponent } from "./programmatic/programmatic.demo.component";
 
 export const AngularAnimationsContent: ContentGroup = {
     title: 'Angular Animations',
@@ -91,5 +92,14 @@ export const AngularAnimationsContent: ContentGroup = {
             post: 'assets/post-content/advanced/route/route.content.md',
             pageType: EPageType.ContentOnly,
           },
+          programmatic: {
+            title: 'Programmatic Animations',
+            description:
+                'Programmatically control your Angular animations.',
+            path: 'post/angular-animations/programmatic',
+            post: 'assets/post-content/advanced/programmatic/programmatic.content.md',
+            pageType: EPageType.ContentWithDemo,
+            demoComponent: ProgrammaticDemoComponent
+        },
     }
 }
