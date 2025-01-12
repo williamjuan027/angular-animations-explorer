@@ -51,7 +51,7 @@ export class MotionOneDemoComponent {
       this.myElement.nativeElement,
       { rotate: 180 },
       { duration: 0.5, easing: 'ease-in' }
-    ).finished.then(() => {
+    ).then(() => {
         // animation completed
       })
       .catch(() => {
@@ -67,7 +67,7 @@ Motion One also comes with prebuilt easing such as `spring` and `glide` which yo
 
 ```typescript
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { animate, spring } from 'motion';
+import { animate } from 'motion';
 
 @Component({
   ...
@@ -79,8 +79,8 @@ export class MotionOneDemoComponent {
     animate(
       this.myElement.nativeElement,
       { rotate: 180 },
-      { duration: 0.5, easing: spring() } // 👈 modify the easing
-    ).finished.then(() => {
+      { type: 'spring', duration: 0.5 } // 👈 modify the easing
+    ).then(() => {
         // animation completed
       })
       .catch(() => {
@@ -92,13 +92,13 @@ export class MotionOneDemoComponent {
 
 ## Timeline
 
-Another cool feature from Motion One is its out-of-the-box support of timeline. You can chain your animations and animate different elements all at once by creating an animations array and passing it to the `timeline` function.
+Another cool feature from Motion One is its out-of-the-box support of timeline. You can chain your animations and animate different elements all at once by creating an animations array and passing it to the `animate` function.
 
-The `timeline` function works similarly to Greensock's timeline feature. The code snippet below shows how you chain and sequence a translation of a box (Click on the `sequence` button on the demo to see it in action).
+The `animate` function when used with an array of animations works similarly to Greensock's timeline feature. The code snippet below shows how you chain and sequence a translation of a box (Click on the `sequence` button on the demo to see it in action).
 
 ```typescript
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { timeline } from 'motion';
+import { animate } from 'motion';
 
 @Component({
   ...
@@ -112,8 +112,8 @@ export class MotionOneDemoComponent {
       [this.myElement.nativeElement, { y: 100 }, { duration: 0.5 }],
       [this.myElement.nativeElement, { x: 0, y: 0 }, { duration: 1 }],
     ];
-    timeline(sequence)
-      .finished.then(() => {
+    animate(sequence)
+      .then(() => {
         // animation completed
       })
       .catch(() => {

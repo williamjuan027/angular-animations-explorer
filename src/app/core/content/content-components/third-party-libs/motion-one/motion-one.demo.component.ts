@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { animate, spring, timeline, Easing, EasingGenerator } from 'motion';
+import { animate, Easing, AnimationGeneratorType } from 'motion';
 
 @Component({
     imports: [CommonModule],
@@ -12,11 +12,11 @@ export class MotionOneDemoComponent {
   isAnimating = false;
 
   animateDefaultCard(): void {
-    this._animateCard('ease-in-out');
+    this._animateCard('easeInOut', 'keyframes');
   }
 
   animateSpringCard(): void {
-    this._animateCard(spring());
+    this._animateCard('linear', 'spring');
   }
 
   animateSequenceCard(): void {
@@ -26,8 +26,8 @@ export class MotionOneDemoComponent {
       [this.box.nativeElement, { y: 100 }, { duration: 0.5 }],
       [this.box.nativeElement, { x: 0, y: 0 }, { duration: 1 }],
     ];
-    timeline(sequence as any)
-      .finished.then(() => {
+    animate(sequence as any)
+      .then(() => {
         this.isAnimating = false;
       })
       .catch(() => {
@@ -35,16 +35,16 @@ export class MotionOneDemoComponent {
       });
   }
 
-  private _animateCard(easing: Easing | EasingGenerator): void {
+  private _animateCard(ease: Easing | Easing[], type: AnimationGeneratorType): void {
     this.isAnimating = true;
-    animate(this.box.nativeElement, { rotate: 180 }, { duration: 0.5, easing })
-      .finished.then(() => {
+    animate(this.box.nativeElement, { rotate: 180 }, { type, duration: 0.5, ease })
+      .then(() => {
         animate(
           this.box.nativeElement,
           { rotate: 0 },
-          { duration: 0.5, easing }
+          { type, duration: 0.5, ease }
         )
-          .finished.then(() => {
+          .then(() => {
             this.isAnimating = false;
           })
           .catch(() => {

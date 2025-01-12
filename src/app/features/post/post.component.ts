@@ -7,7 +7,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { DemoContentDirective } from './directives/demo-content.directive';
 
 @Component({
-    imports: [CommonModule, MarkdownModule, SingleColumnComponent, TwoColumnComponent, ClipboardButtonComponent, DemoContentDirective],
+    imports: [CommonModule, MarkdownModule, SingleColumnComponent, TwoColumnComponent, DemoContentDirective],
     providers: [ContentLoaderService],
     selector: 'app-post',
     templateUrl: './post.component.html'
