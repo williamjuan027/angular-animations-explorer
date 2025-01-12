@@ -9,11 +9,10 @@ import {
 type TSequence = 'SEQUENCE' | 'GROUP' | 'STAGGER' | null;
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-sequence-demo',
-  templateUrl: './sequence.demo.component.html',
-  animations: [FadeGrowSequence, FadeGrowGroup, FadeGrowStagger],
+    imports: [CommonModule],
+    selector: 'app-sequence-demo',
+    templateUrl: './sequence.demo.component.html',
+    animations: [FadeGrowSequence, FadeGrowGroup, FadeGrowStagger]
 })
 export class SequenceDemoComponent {
   sequenceSelected: TSequence = 'SEQUENCE';

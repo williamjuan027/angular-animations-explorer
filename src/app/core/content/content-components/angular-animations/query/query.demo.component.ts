@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { QueryShake } from './query.animation';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-query-demo',
-  templateUrl: './query.demo.component.html',
-  animations: [QueryShake],
+    imports: [CommonModule],
+    selector: 'app-query-demo',
+    templateUrl: './query.demo.component.html',
+    animations: [QueryShake]
 })
 export class QueryDemoComponent {
   animation: 'default' | 'withLimit' | null = null;

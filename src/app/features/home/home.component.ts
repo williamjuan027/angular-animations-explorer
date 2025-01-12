@@ -6,10 +6,9 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, SingleColumnComponent, MarkdownModule, ContentCardComponent],
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+    imports: [CommonModule, SingleColumnComponent, MarkdownModule, ContentCardComponent],
+    selector: 'app-home',
+    templateUrl: './home.component.html'
 })
 export class HomeComponent {
 

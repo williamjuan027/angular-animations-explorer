@@ -3,10 +3,9 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { animate, spring, timeline, Easing, EasingGenerator } from 'motion';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-motion-one-demo',
-  templateUrl: './motion-one.demo.component.html',
+    imports: [CommonModule],
+    selector: 'app-motion-one-demo',
+    templateUrl: './motion-one.demo.component.html'
 })
 export class MotionOneDemoComponent {
   @ViewChild('box') box!: ElementRef;

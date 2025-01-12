@@ -7,11 +7,10 @@ import { MarkdownModule } from 'ngx-markdown';
 import { DemoContentDirective } from './directives/demo-content.directive';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, MarkdownModule, SingleColumnComponent, TwoColumnComponent, ClipboardButtonComponent, DemoContentDirective],
-  providers: [ContentLoaderService],
-  selector: 'app-post',
-  templateUrl: './post.component.html',
+    imports: [CommonModule, MarkdownModule, SingleColumnComponent, TwoColumnComponent, ClipboardButtonComponent, DemoContentDirective],
+    providers: [ContentLoaderService],
+    selector: 'app-post',
+    templateUrl: './post.component.html'
 })
 export class PostComponent implements OnInit {
   ePageType = EPageType; // determine which layout to use on template

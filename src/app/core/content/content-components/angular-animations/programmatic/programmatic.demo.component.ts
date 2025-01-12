@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { style, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-programmatic-demo',
-  templateUrl: './programmatic.demo.component.html'
+    imports: [CommonModule],
+    selector: 'app-programmatic-demo',
+    templateUrl: './programmatic.demo.component.html'
 })
 export class ProgrammaticDemoComponent {
   @ViewChild('demoCard') demoCard: ElementRef | undefined;

@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { PulseAnimation } from './disable.animation';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-disable-demo',
-  templateUrl: './disable.demo.component.html',
-  animations: [PulseAnimation],
+    imports: [CommonModule],
+    selector: 'app-disable-demo',
+    templateUrl: './disable.demo.component.html',
+    animations: [PulseAnimation]
 })
 export class DisableDemoComponent {
   isAnimating = false;

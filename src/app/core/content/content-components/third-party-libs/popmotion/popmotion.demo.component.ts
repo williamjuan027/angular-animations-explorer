@@ -8,11 +8,10 @@ import {
 } from './popmotion.model';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, StateChangePopmotionDemoDirective],
-  selector: 'app-popmotion-demo',
-  templateUrl: './popmotion.demo.component.html',
-  styleUrls: ['./popmotion.demo.component.scss'],
+    imports: [CommonModule, StateChangePopmotionDemoDirective],
+    selector: 'app-popmotion-demo',
+    templateUrl: './popmotion.demo.component.html',
+    styleUrls: ['./popmotion.demo.component.scss']
 })
 export class PopmotionDemoComponent {
   isAnimating = false;

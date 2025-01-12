@@ -11,11 +11,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-animate-style-demo',
-  templateUrl: './animate-style.demo.component.html',
-  styleUrls: ['./animate-style.demo.component.scss'],
+    imports: [CommonModule],
+    selector: 'app-animate-style-demo',
+    templateUrl: './animate-style.demo.component.html',
+    styleUrls: ['./animate-style.demo.component.scss']
 })
 export class AnimateStyleDemoComponent implements AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef })

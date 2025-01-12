@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-web-animations-api-demo',
-  templateUrl: './web-animations-api.demo.component.html',
-  styleUrls: ['./web-animations-api.demo.component.scss'],
+    imports: [CommonModule],
+    selector: 'app-web-animations-api-demo',
+    templateUrl: './web-animations-api.demo.component.html',
+    styleUrls: ['./web-animations-api.demo.component.scss']
 })
 export class WebAnimationsApiDemoComponent {
   @ViewChild('card') card!: ElementRef;

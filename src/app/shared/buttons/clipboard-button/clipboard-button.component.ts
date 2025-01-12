@@ -2,10 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-clipboard-button',
-  templateUrl: './clipboard-button.component.html',
+    imports: [CommonModule],
+    selector: 'app-clipboard-button',
+    templateUrl: './clipboard-button.component.html'
 })
 export class ClipboardButtonComponent {
     clipboardButtonState: 'idle' | 'copied' = 'idle';

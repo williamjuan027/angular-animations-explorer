@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-inline-demo',
-  templateUrl: './inline.demo.component.html',
-  styleUrls: ['./inline.demo.component.scss'],
+    imports: [CommonModule],
+    selector: 'app-inline-demo',
+    templateUrl: './inline.demo.component.html',
+    styleUrls: ['./inline.demo.component.scss']
 })
 export class InlineDemoComponent {
   isScaledDown = false;

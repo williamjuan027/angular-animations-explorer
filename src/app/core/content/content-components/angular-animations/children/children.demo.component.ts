@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Container, EnterExitLeft, EnterExitRight } from './children.animation';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
-  selector: 'app-children-demo',
-  templateUrl: './children.demo.component.html',
-  animations: [Container, EnterExitLeft, EnterExitRight],
+    imports: [CommonModule],
+    selector: 'app-children-demo',
+    templateUrl: './children.demo.component.html',
+    animations: [Container, EnterExitLeft, EnterExitRight]
 })
 export class ChildrenDemoComponent {
   isDisplayed = true;
