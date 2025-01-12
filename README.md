@@ -4,7 +4,7 @@
 
 [![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=for-the-badge)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)]()
-[![Angular](https://img.shields.io/badge/Angular-15-DE0031.svg?style=for-the-badge)](https://github.com/angular/angular)
+[![Angular](https://img.shields.io/badge/Angular-19-DE0031.svg?style=for-the-badge)](https://github.com/angular/angular)
 [![social](https://img.shields.io/twitter/follow/williamjuan27?color=%23249FEC&label=follow%20me&logo=twitter&style=for-the-badge)](https://twitter.com/williamjuan27)
 
 ![Hero image](src/assets/images/github-hero.png)

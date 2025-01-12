@@ -2,7 +2,7 @@ Angular animations (`@angular/animations`) is a powerful module that comes with 
 
 The animations are based on CSS web transition functionality which means that anything that can be styled or transformed through CSS, can be animated the same way using Angular animations with the added advantage of giving the developer more control in orchestrating it. This provides us with animations that have CSS-like performance along with the flexibility of Javascript out of the box without additional dependencies.
 
-Animations using Angular's BrowserAnimationModule goes through 4 steps. I like to think of this as being comprised of a series of questions - why, what, where, and how, the answers of which being what governs the animation’s behavior:
+Animations using Angular's BrowserAnimationModule goes through 4 steps. I like to think of this as being comprised of a series of questions - why, what, where, and how, the answers of which being what governs the animation's behavior:
 
 - Evaluate data binding expression - tells Angular which animation state the host element is assigned to (why)
 - Data binding target tells Angular which animation target defines CSS styles for the elements state (what)

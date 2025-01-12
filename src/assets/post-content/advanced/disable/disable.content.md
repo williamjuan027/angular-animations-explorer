@@ -18,9 +18,9 @@ export class AppComponent {
 
 ## Some gotchas of this property
 
-The `disabled` property only targets Angular animations, hence animations that are implemented using CSS transitions or keyframe animations won’t be disabled.
+The `disabled` property only targets Angular animations, hence animations that are implemented using CSS transitions or keyframe animations won't be disabled.
 
-Another caveat: it won’t work for elements that are appended to the DOM directly. Some examples of these types of elements are overlays such as bottom sheets and modals. Instead of using the previous methods of adding the `disabled` property, we can use Angular’s `Renderer2` to set the attribute directly to the overlay containers to disable both the element and its children’s animations.
+Another caveat: it won't work for elements that are appended to the DOM directly. Some examples of these types of elements are overlays such as bottom sheets and modals. Instead of using the previous methods of adding the `disabled` property, we can use Angular's `Renderer2` to set the attribute directly to the overlay containers to disable both the element and its children's animations.
 
 ```ts
 constructor( private overlayContainer: OverlayContainer, private renderer:Renderer2 ) {

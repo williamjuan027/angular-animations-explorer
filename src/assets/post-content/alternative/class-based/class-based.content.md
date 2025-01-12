@@ -46,6 +46,6 @@ This can be handled directly in the template using angular by attaching a condit
 <div [class.shrink]="isSelected"></div>
 ```
 
-Similar to Angular animation’s `@animation.done` event, class based animation also comes with some events which we can hook into. Depending on whether you are using keyframes or transitions, we can use either `animationend` or `transitionend` to listen to the animation end event.
+Similar to Angular animation's `@animation.done` event, class based animation also comes with some events which we can hook into. Depending on whether you are using keyframes or transitions, we can use either `animationend` or `transitionend` to listen to the animation end event.
 
 The nice thing about this approach is that you would be able to utilize any css animation library that works based on adding and removing classes such as [animate.css](https://daneden.github.io/animate.css/) or [magic.css](https://www.minimamente.com/project/magic/). Chris Coyier has an amazing [article](https://css-tricks.com/css-animation-libraries/) that lists some of the popular ones if you are interested.
