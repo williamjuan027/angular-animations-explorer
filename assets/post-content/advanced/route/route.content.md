@@ -16,7 +16,7 @@ To demonstrate this, we will first need to wrap the `router-outlet` inside a `di
 </div>
 ```
 
-Secondly, we need to pass the outlet’s current state to our `routeAnimations` using the `router-outlet`’s `activatedRoute` property. This property will get updated every time a navigation occurs which in turn will trigger our animation. We will use a helper function `prepareRoute` to do the necessary checks and return the value required by the `routeAnimation` trigger.
+Secondly, we need to pass the outlet's current state to our `routeAnimations` using the `router-outlet`'s `activatedRoute` property. This property will get updated every time a navigation occurs which in turn will trigger our animation. We will use a helper function `prepareRoute` to do the necessary checks and return the value required by the `routeAnimation` trigger.
 
 ```ts
 prepareRoute(outlet: RouterOutlet) {
@@ -74,7 +74,7 @@ There is no difference in writing animation code for route animation and animati
 
 ## Variable Route Animations
 
-We can also pass in additional parameters through the router’s `data` property if we need variable animations. A common use case for this is if we want to trigger different enter and exit animations for different routes.
+We can also pass in additional parameters through the router's `data` property if we need variable animations. A common use case for this is if we want to trigger different enter and exit animations for different routes.
 
 ```ts
 {
@@ -89,7 +89,7 @@ We can also pass in additional parameters through the router’s `data` property
   }
 ```
 
-In order to get the additional parameter and use it in our animation, we will have to modify the `prepareRoute` function to return the additional parameter. Instead of returning the router’s state, we will use the `activatedRouteData` property to access the `data` object and select the `animation` property.
+In order to get the additional parameter and use it in our animation, we will have to modify the `prepareRoute` function to return the additional parameter. Instead of returning the router's state, we will use the `activatedRouteData` property to access the `data` object and select the `animation` property.
 
 ```ts
 prepareRoute(outlet: RouterOutlet) {

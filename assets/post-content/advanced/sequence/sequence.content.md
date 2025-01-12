@@ -2,7 +2,7 @@ Animations can run both in sequence and in parallel using the functions `sequenc
 
 `group` and `sequence` are a little different compared to `stagger`. The former are applied to animation steps (values inside the animation array), whereas the latter are applied to the animated elements.
 
-To demonstrate the various animation sequences, let’s start with defining the template which contains the parent element that we will target in our animations along with a few children elements. This is commonly used in lists or grid-like components containing multiple same or similar children elements. For simplicity, we will animate the children elements entering the view, adding a fade in and grow effect using the 3 sequences.
+To demonstrate the various animation sequences, let's start with defining the template which contains the parent element that we will target in our animations along with a few children elements. This is commonly used in lists or grid-like components containing multiple same or similar children elements. For simplicity, we will animate the children elements entering the view, adding a fade in and grow effect using the 3 sequences.
 
 ```markup
 <ul @fadeInGrow>
@@ -18,13 +18,13 @@ To demonstrate the various animation sequences, let’s start with defining the 
 
 ```typescript
 animations: [
-  trigger(‘fadeInGrow, [
-    transition(‘:enter’, [
-      query(‘:enter’, [
-        style({ opacity: 0, transform: ‘scale(0.8)’  }),
+  trigger('fadeInGrow', [
+    transition(':enter', [
+      query(':enter', [
+        style({ opacity: 0, transform: 'scale(0.8)'  }),
         group([
-          animate(‘500ms’, style({ opacity: 1 }),
-          animate(‘200ms ease-in’, style({ transform: ‘scale(1)’ })
+          animate('500ms', style({ opacity: 1 })),
+          animate('200ms ease-in', style({ transform: 'scale(1)' }))
         ])
       ])
     ])
@@ -40,13 +40,13 @@ Comparing the code below and the code in the previous section, everything looks 
 
 ```typescript
 animations: [
-  trigger(‘fadeInGrow’, [
-    transition(‘:enter’, [
-      query(‘:enter’, [
-        style({ opacity: 0, transform: ‘scale(0.8)’  }),
+  trigger('fadeInGrow' [
+    transition(':enter', [
+      query(':enter', [
+        style({ opacity: 0, transform: 'scale(0.8)'  }),
         sequence([
-          animate(‘500ms’, style({ opacity: 1 }),
-          animate(‘200ms ease-in’, style({ transform: ‘scale(1)’ })
+          animate('500ms', style({ opacity: 1 })),
+          animate('200ms ease-in', style({ transform: 'scale(1)' }))
         ])
       ])
     ])
@@ -56,7 +56,7 @@ animations: [
 
 ## Stagger Animations
 
-Unlike the previous 2 functions, `stagger` is applied to the animated elements. This is usually used in conjunction with the `query` function to find inner elements within a parent/container element and applying animation to each of the child individually. What makes `stagger` unique is that it takes in an additional parameter timing to specify the delay for the animation’s execution for each element creating a cascading effect.
+Unlike the previous 2 functions, `stagger` is applied to the animated elements. This is usually used in conjunction with the `query` function to find inner elements within a parent/container element and applying animation to each of the child individually. What makes `stagger` unique is that it takes in an additional parameter timing to specify the delay for the animation's execution for each element creating a cascading effect.
 
 With `stagger`, the animation will be applied in the order of the element queried. This usually results in a staggering effect from the top down. We can easily reverse this order by passing in a negative value to the `timing` parameter resulting in the animation staggered starting from the last element and making its way up.
 
@@ -64,12 +64,12 @@ The second parameter in the `stagger` function accepts an array of `style` and `
 
 ```typescript
 animations: [
-  trigger(fadeInGrow, [
-    transition(‘:enter’, [
-      query(‘:enter’, [
+  trigger('fadeInGrow', [
+    transition(':enter', [
+      query(':enter', [
         style({ opacity: 0 }),
-        stagger(‘50ms’, [
-          animate(‘500ms’, style({ opacity: 1 })
+        stagger('50ms', [
+          animate('500ms', style({ opacity: 1 }))
         ])
       ])
     ])
@@ -77,8 +77,8 @@ animations: [
 ]
 ```
 
-Let’s break down the new functions in the code above:
+Let's break down the new functions in the code above:
 
 - The trigger `fadeInGrow` targets the parent adding an `:enter` transition which will execute the animation in the transition array when the parent element enters the DOM.
-- `query(':enter')` inside the transition array targets all the children elements which will enter the DOM and applies the properties in the array that gets passed in which defines the elements’ styles and animations.
+- `query(':enter')` inside the transition array targets all the children elements which will enter the DOM and applies the properties in the array that gets passed in which defines the elements' styles and animations.
 - `stagger('50ms')` in the array being passed in to the query function tells Angular to execute all the animations applied to the children elements with a 50 ms delay between each element.
