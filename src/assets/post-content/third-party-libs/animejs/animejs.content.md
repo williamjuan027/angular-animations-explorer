@@ -112,11 +112,6 @@ Add styling to the buttons:
 
 ```
 
-If you've followed along, you should see the following UI:
-
-
-
-
 ## Add AnimeJS Animation
 
 Start with using the `ViewChild` decorator to access the target element:
