@@ -91,3 +91,10 @@ markdown {
         }
     }
   }
+
+  .variant-switcher-button {
+    @apply rounded-lg border border-cyan-700 flex flex-col text-cyan-500 px-3 py-2;
+    &.active {
+      @apply rounded-lg border border-cyan-700 bg-cyan-800 flex flex-col text-white;
+    }
+  }

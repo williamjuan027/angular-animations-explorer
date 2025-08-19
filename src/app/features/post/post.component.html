@@ -9,6 +9,14 @@
 
     <ng-container *ngSwitchCase="ePageType.ContentWithDemo">
       <h1 class="text-3xl font-medium text-cyan-300 px-5">{{ postInfo?.title }}</h1>
+      @let variants = postInfo?.variants;
+      @if (variants && variants.length > 0) {
+        <div class="flex flex-row p-4 gap-2">
+          @for (variant of variants; track variant.title) {
+            <button class="variant-switcher-button" [class.active]="selectedVariantIndex() === $index" (click)="selectVariant($index)">{{ variant.title }}</button>
+          }
+        </div>
+      }
       <app-two-column>
         <div left-section>
           <ng-container *ngTemplateOutlet="markdown"></ng-container>
@@ -34,7 +42,7 @@
       <markdown
         clipboard
         [clipboardButtonComponent]="clipboardButtonComponent"
-        [src]="mdPost"> </markdown>
+        [src]="mdPost()"> </markdown>
     </div>
   </ng-template>
 </div>

@@ -18,7 +18,6 @@
     <!-- about the project -->
     <div class="flex flex-col mt-20">
       <h2 class="font-medium text-4xl text-cyan-300">About the Project</h2>
-      <!-- <p class="text-lg text-gray-400 mt-2">Didn't find what you are looking for? Below are a few more resources surrounding animations and Angular</p> -->
       <div class="mt-5">
         <markdown src="assets/post-content/misc/intro/intro.content.md">
         </markdown>
@@ -43,6 +42,9 @@
       <span class="font-medium text-lg text-cyan-300">{{ angularAnimationsContent.title }}</span>
       <h2 class="mt-2 font-medium text-4xl text-white">{{ angularAnimationsContent.tagLine }}</h2>
       <p class="mt-4 text-lg text-gray-400">{{ angularAnimationsContent.description }}</p>
+      <div class="flex flex-col border border-cyan-900 bg-slate-800 rounded-lg px-3 py-3 w-fit text-gray-300 italic my-2">
+        IMPORTANT: The Angular team recommends using native CSS for animations instead of the Animations package for all new code. Each of the following contains content about the Angular Animation implementation and the new recommended CSS approach to achieve the same effect.
+      </div>
 
       <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap gap-3 mt-5">
         <ng-container *ngFor="let content of angularAnimationsContent.content | keyvalue">

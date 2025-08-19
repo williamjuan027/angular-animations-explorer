@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, inject, OnInit, signal, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Content, ContentLoaderService, EPageType } from '@app/core';
 import { ClipboardButtonComponent, SingleColumnComponent, TwoColumnComponent } from '@app/shared';
@@ -14,9 +14,14 @@ import { DemoContentDirective } from './directives/demo-content.directive';
 })
 export class PostComponent implements OnInit {
   ePageType = EPageType; // determine which layout to use on template
-  mdPost: string | undefined = undefined; // path to md file
+  mdPost = signal<string | undefined>(undefined) // path to md file
   postInfo: Content | undefined = undefined;
   clipboardButtonComponent = ClipboardButtonComponent
+
+  selectedVariantIndex = signal(0);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private contentLoaderService = inject(ContentLoaderService);
 
   private routeInfo: {
     category: string;
@@ -24,24 +29,30 @@ export class PostComponent implements OnInit {
   } | undefined = undefined;
   private demoVcRef: ViewContainerRef | undefined = undefined;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private contentLoaderService: ContentLoaderService
-  ) {}
-
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const category = params.get('category');
       const postName = params.get('postName');
       if (category != null && postName != null)
-      this.setupPage(category, postName);
-    });
+        this.setupPage(category, postName);
+      });
   }
 
   onComponentLoaded(vcRef: ViewContainerRef): void {
     this.loadDemoComponent(vcRef);
     this.demoVcRef = vcRef;
+  }
+
+  selectVariant(index: number): void {
+    if (!this.postInfo?.variants || !this.demoVcRef) {
+      return;
+    }
+    this.mdPost.set(this.postInfo.variants[index].post)
+    this.contentLoaderService.loadDemoComponent(
+      this.postInfo.variants[index].demoComponent,
+      this.demoVcRef
+    );
+    this.selectedVariantIndex.set(index)
   }
 
   private setupPage(category: string, postName: string): void {
@@ -54,7 +65,7 @@ export class PostComponent implements OnInit {
 
       if (this.postInfo != null) {
         // load markdown
-        this.mdPost = this.postInfo.post;
+        this.mdPost.set(this.postInfo.post);
       } else {
         this.router.navigate(['']);
       }
@@ -73,7 +84,7 @@ export class PostComponent implements OnInit {
   private loadDemoComponent(vcRef: ViewContainerRef): void {
     if (this.postInfo != null) {
       this.contentLoaderService.loadDemoComponent(
-        this.postInfo,
+        this.postInfo.demoComponent,
         vcRef
       );
     }

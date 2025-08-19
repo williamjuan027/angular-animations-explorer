@@ -31,12 +31,12 @@ import { Content } from '../models';
       }
     }
 
-    loadDemoComponent(content: Content, container: ViewContainerRef) {
+    loadDemoComponent(demoComponent: any, container: ViewContainerRef) {
         try {
             container.clear();
-            if (content.demoComponent != null) {
+            if (demoComponent != null) {
                 setTimeout(() => {
-                    container.createComponent(content.demoComponent);
+                    container.createComponent(demoComponent);
                 })
             }
         } catch(e) {

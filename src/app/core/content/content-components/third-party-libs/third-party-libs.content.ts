@@ -1,5 +1,6 @@
 import { ContentGroup, EPageType } from "../../../models";
 import { AnimateStyleDemoComponent } from "./animate-style/animate-style.demo.component";
+import { AnimejsDemoComponent } from "./animejs/animejs.demo.component";
 import { GreensockDemoComponent } from "./greensock/greensock.demo.component";
 import { MotionOneDemoComponent } from "./motion-one/motion-one.demo.component";
 import { PopmotionDemoComponent } from "./popmotion/popmotion.demo.component";
@@ -47,6 +48,16 @@ export const ThirdPartyLibsContent: ContentGroup = {
         'assets/post-content/third-party-libs/motion-one/motion-one.content.md',
       pageType: EPageType.ContentWithDemo,
       demoComponent: MotionOneDemoComponent
-    }
+    },
+     animejs: {
+      title: 'Animejs',
+      description:
+        'A fast and versatile all-in-one animation engine',
+      path: 'post/third-party-libs/animejs',
+      post:
+        'assets/post-content/third-party-libs/animejs/animejs.content.md',
+      pageType: EPageType.ContentWithDemo,
+      demoComponent: AnimejsDemoComponent,
+    },
   }
 };

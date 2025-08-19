@@ -7,6 +7,7 @@ import { QueryDemoComponent } from './query/query.demo.component';
 import { ChildrenDemoComponent } from './children/children.demo.component';
 import { DisableDemoComponent } from './disable/disable.demo.component';
 import { ProgrammaticDemoComponent } from "./programmatic/programmatic.demo.component";
+import { EnterExitDemoCSSComponent } from "./enter-exit-css/enter-exit-css.demo.component";
 
 export const AngularAnimationsContent: ContentGroup = {
     title: 'Angular Animations',
@@ -37,7 +38,21 @@ export const AngularAnimationsContent: ContentGroup = {
             path: 'post/angular-animations/enter-exit',
             post: 'assets/post-content/basic/enter-exit/enter-exit.content.md',
             pageType: EPageType.ContentWithDemo,
-            demoComponent: EnterExitDemoComponent
+            demoComponent: EnterExitDemoComponent,
+            variants: [
+              {
+                title: 'Angular Animations (< v19)',
+                post: 'assets/post-content/basic/enter-exit/enter-exit.content.md',
+                pageType: EPageType.ContentWithDemo,
+                demoComponent: EnterExitDemoComponent,
+              },
+              {
+                title: 'CSS (> v20)',
+                post: 'assets/post-content/basic/enter-exit/enter-exit-css.content.md',
+                pageType: EPageType.ContentWithDemo,
+                demoComponent: EnterExitDemoCSSComponent,
+              }
+            ]
         },
         sequence: {
             title: 'Sequence',

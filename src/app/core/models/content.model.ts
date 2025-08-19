@@ -5,6 +5,12 @@ export interface Content {
     post: string;
     pageType: EPageType;
     demoComponent?: any;
+    variants?: {
+        title: string,
+        post: string;
+        pageType: EPageType;
+        demoComponent?: any;
+    }[]
 }
 
 export enum EPageType {
@@ -22,5 +28,5 @@ export interface ContentGroup {
     title: string,
     description: string,
     tagLine: string,
-    content: Record<string, Content>
+    content: Record<string, Content>,
 }
