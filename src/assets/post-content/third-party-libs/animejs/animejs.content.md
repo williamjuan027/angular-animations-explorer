@@ -223,7 +223,7 @@ export class AppComponent {
 
 ```
 
-Create a function to play and pause the animation that accepts an easing parameter to set animation's easing configuration. This function will perform the checks and set the `isAnimating` and `isPaused` variables depending on the current state of the animation. If the animation is playing, it'll enable the ability to pause the animation and if it's not playing, it'll start the animation.
+Create a function to play and pause the animation. This function will perform the checks and set the `isAnimating` and `isPaused` variables depending on the current state of the animation. If the animation is playing, it'll enable the ability to pause the animation and if it's not playing, it'll start the animation.
 
 ```js
 // app.component.ts
